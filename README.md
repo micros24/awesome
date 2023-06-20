@@ -37,10 +37,15 @@ yay -S corectrl xiccd colord easyeffects psensor
 ## My personal installs
 
 ```
-yay -S awesome picom-jonaburg-git polybar wlogout-git rofi-lbonn-wayland polkit-kde-agent corectrl xiccd colord xfce4-clipman bluez bluez-utils blueman psensor easyeffects network-manager-applet pamixer dolphin qt5ct kvantum kate firefox flatpak zsh input-remapper-git xlockmore-nomotif playerctl nano sudo ark bitwarden bleachbit cpupower fastfetch fuse2fs github-cli gopreload-git gwenview htop kompare linux-cachyos-bore linux-cachyos-bore-headers linux-lts linux-xanmod linux-xanmod-headers lsp-plugins lutris man-db mangohud mpv obs-vkcapture pacman-contrib pavucontrol pinta proton-cachyos protonup-qt qt5ct r8168-dkms reflector timeshift ttf-font-awesome ttf-monaco ttf-roboto ttf-ubuntu-font-family wget wine-gecko wine-mono winetricks-git xf86-video-amdgpu sddm-git xorg-server util-linux ufw ttf-liberation ttf-dejavu intel-media-driver mesa libva-mesa-driver mesa-vdpau zsh-theme-powerlevel10k-git
+yay -S awesome picom-jonaburg-git polybar wlogout-git rofi-lbonn-wayland polkit-kde-agent corectrl xiccd colord xfce4-clipman bluez bluez-utils blueman psensor easyeffects network-manager-applet pamixer dolphin qt5ct kvantum kate firefox flatpak zsh input-remapper-git xlockmore-nomotif playerctl nano sudo ark bitwarden bleachbit cpupower fastfetch fuse2fs github-cli gopreload-git gwenview htop kompare konsole linux-cachyos-bore linux-cachyos-bore-headers linux-lts linux-xanmod linux-xanmod-headers lsp-plugins lutris man-db mangohud mpv obs-vkcapture pacman-contrib pavucontrol pinta proton-cachyos protonup-qt qt5ct r8168-dkms reflector timeshift ttf-font-awesome ttf-monaco ttf-roboto ttf-ubuntu-font-family wget wine wine-gecko wine-mono winetricks-git xf86-video-amdgpu sddm-git xorg-server util-linux ufw ttf-liberation ttf-dejavu ttf-hack intel-media-driver mesa libva-mesa-driver mesa-vdpau zsh-theme-powerlevel10k-git xorg-server xorg-apps gvfs vulkan-radeon vulkan-intel xdg-desktop-portal xdg-user-dirs pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber brave-bin gamemode obs-studio-tytan652
 
 flatpak install flathub com.spotify.Client
 flatpak install flathub com.github.tchx84.Flatseal
+```
+## Installing MiBroSoft fonts
+Follow instructions from https://wiki.archlinux.org/title/Microsoft_fonts before installing the package below
+```
+ttf-ms-win11
 ```
 
 # Setup zsh
