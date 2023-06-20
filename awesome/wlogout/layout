@@ -1,0 +1,36 @@
+{
+    "label" : "logout",
+    "action" : "pkill -SIGKILL -u micro",
+    "text" : "Logout"
+}
+
+{
+    "label" : "lock",
+    "action" : "xlock -dpmsoff 60",
+    "text" : "Lock"
+}
+
+{
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+    "text" : "Reboot"
+}
+
+{
+    "label" : "hibernate",
+    "action" : "",
+    "text" : "Hibernate"
+}
+
+{
+    "label" : "shutdown",
+    "action" : "systemctl poweroff",
+    "text" : "Shutdown"
+}
+
+
+{
+    "label" : "suspend",
+    "action" : "",
+    "text" : "Suspend"
+}
