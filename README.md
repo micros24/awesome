@@ -17,6 +17,7 @@ makepkg -si
 ```
 
 # Installing my awesome configs
+
 ## Mandatory packages
 
 Picom is my compositor. Polybar is my status bar. wlogout is my logout screen. rofi is my application runner. xfce4-clipman is my clipboard manager.
@@ -36,13 +37,18 @@ yay -S corectrl xiccd colord easyeffects psensor
 ## My personal installs
 
 ```
-yay -S awesome picom-jonaburg-git polybar wlogout-git rofi-lbonn-wayland polkit-kde-agent corectrl xiccd colord xfce4-clipman bluez bluez-utils blueman psensor easyeffects network-manager-applet pamixer dolphin qt5ct kvantum kate firefox flatpak zsh input-remapper-git xlockmore-nomotif playerctl nano sudo ark bitwarden bleachbit cpupower fastfetch fuse2fs github-cli gopreload-git gwenview htop kompare konsole linux-cachyos-bore linux-cachyos-bore-headers linux-lts linux-xanmod linux-xanmod-headers lsp-plugins lutris man-db mangohud mpv obs-vkcapture pacman-contrib pavucontrol pinta proton-cachyos protonup-qt qt5ct r8168-dkms reflector timeshift ttf-font-awesome ttf-monaco ttf-roboto ttf-ubuntu-font-family wget wine wine-gecko wine-mono winetricks-git xf86-video-amdgpu sddm-git xorg-server util-linux ufw ttf-liberation ttf-dejavu ttf-hack intel-media-driver mesa libva-mesa-driver mesa-vdpau zsh-theme-powerlevel10k-git xorg-server xorg-apps gvfs vulkan-radeon vulkan-intel xdg-desktop-portal xdg-user-dirs pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber brave-bin gamemode obs-studio-tytan652 lsp-plugins
+yay -S awesome picom-jonaburg-git polybar wlogout-git rofi-lbonn-wayland polkit-kde-agent corectrl xiccd colord xfce4-clipman bluez bluez-utils blueman psensor easyeffects network-manager-applet pamixer kvantum firefox flatpak zsh input-remapper-git xlockmore-nomotif playerctl nano sudo file-roller bitwarden bleachbit cpupower fastfetch github-cli gopreload-git gwenview htop kompare konsole linux-cachyos-bore linux-cachyos-bore-headers linux-lts linux-xanmod linux-xanmod-headers lutris mangohud mpv obs-vkcapture pacman-contrib pavucontrol pinta proton-cachyos protonup-qt qt5ct r8168-dkms reflector timeshift ttf-font-awesome ttf-monaco ttf-roboto ttf-ubuntu-font-family wget wine wine-gecko wine-mono winetricks-git xf86-video-amdgpu sddm-git xorg-server util-linux ufw ttf-liberation ttf-dejavu ttf-hack intel-media-driver mesa libva-mesa-driver mesa-vdpau zsh-theme-powerlevel10k-git xorg-server xorg-apps gvfs vulkan-radeon vulkan-intel xdg-desktop-portal xdg-user-dirs pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber brave-bin gamemode obs-studio-tytan652 lsp-plugins gedit pcmanfm-qt breeze breeze-gtk lxappearance-gtk3
 
 flatpak install flathub com.spotify.Client
 flatpak install flathub com.github.tchx84.Flatseal
 ```
+
+Setup your themes using qt5ct and lxappearance.
+
 ## Installing MiBroSoft fonts
+
 Follow instructions from https://wiki.archlinux.org/title/Microsoft_fonts before installing the package below
+
 ```
 ttf-ms-win11
 ```
@@ -67,6 +73,7 @@ sudo systemctl enable cpupower.service
 sudo systemctl enable input-remapper.service
 sudo systemctl enable sddm.service
 sudo systemctl enable udisks2.service
+sudo systemctl enable gopreload.service
 sudo systemctl enable ufw.service
 sudo systemctl enable reflector.timer
 sudo systemctl enable paccache.timer
@@ -80,3 +87,20 @@ sudo ufw default allow outgoing
 sudo ufw default deny incoming
 sudo ufw enable
 ```
+
+# Configuring your ICC profiles
+
+https://wiki.archlinux.org/title/ICC_profiles#xiccd
+
+```
+xiccd
+colormgr get-devices
+colormgr get-profiles
+colormgr device-add-profile device_id profile_id
+colormgr device-make-profile-default device_id profile_id
+cat /etc/xdg/autostart/xiccd.desktop
+```
+
+# Set-up CoreCtrl
+
+https://gitlab.com/corectrl/corectrl/-/wikis/Setup
