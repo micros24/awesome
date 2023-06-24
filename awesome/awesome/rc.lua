@@ -26,6 +26,9 @@ local show_volume_notification = function()
     awful.spawn.easy_async_with_shell(command, function(out) naughty.notify({ text = out, timeout = 1, position = "bottom_middle", replaces_id = 1}) end)
 end
 
+-- Autorun
+-- awful.spawn.with_shell("~/.config/awesome/autorun.sh")
+
 -- Executing autostart applications
 os.execute("/usr/lib/polkit-kde-authentication-agent-1 &")
 os.execute("dbus-update-activation-environment --systemd XDG_CURRENT_DESKTOP &")
@@ -101,7 +104,7 @@ end
 beautiful.init("/home/micro/.config/awesome/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "konsole"
+terminal = "alacritty"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -137,13 +140,13 @@ awful.layout.layouts = {
 local function set_wallpaper(s)
     -- Wallpaper
     if beautiful.wallpaper then
-        local wallpaper = beautiful.wallpaper
+        -- local wallpaper = beautiful.wallpaper
         -- If wallpaper is a function, call it with the screen
-        if type(wallpaper) == "function" then
-            wallpaper = wallpaper(s)
-        end
+        -- if type(wallpaper) == "function" then
+        --     wallpaper = wallpaper(s)
+        -- end
         -- gears.wallpaper.maximized(wallpaper, s, false)
-        gears.wallpaper.fit(wallpaper, s)
+        gears.wallpaper.fit(beautiful.wallpaper, s)
     end
 end 
 
@@ -151,14 +154,11 @@ end
 screen.connect_signal("property::geometry", set_wallpaper)
 
 for s in screen do
-    set_wallpaper(s)
-    
-    -- naughty.notify({ text = tostring(s[1]) })    
-    
-    -- awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    -- set_wallpaper(s)
     
     if s.index == 1 then
         awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+
     end
     if s.index == 2 then
         awful.tag({ "A", "B", "C", "D", "E", "F", "G", "H", "I" }, s, awful.layout.layouts[1])
@@ -201,13 +201,13 @@ globalkeys = gears.table.join(
             awful.spawn("flatpak run com.spotify.Client") end,
         {description = "open spotify", group = "client"}),
     awful.key({ modkey, }, "e", function () 
-            awful.spawn("dolphin") end,
+            awful.spawn("pcmanfm-qt") end,
         {description = "open file manager", group = "client"}),
     awful.key({ modkey, }, "r", function () 
             awful.spawn("rofi -show") end,
         {description = "show runner", group = "client"}),
     awful.key({ modkey, }, "g", function () 
-            awful.spawn("kate /home/micro/GW2") end,
+            awful.spawn("gedit /home/micro/GW2") end,
         {description = "open GW2 daily list", group = "client"}),
     awful.key({ modkey, }, "Return", function () 
             awful.spawn(terminal) end,
@@ -289,7 +289,7 @@ clientkeys = gears.table.join(
             awful.titlebar.toggle(c) end,
         {description = "Show/Hide Titlebars", group="client"}),
     -- awful.key({ "Control", "Mod1"}, "m",
-    --         function (c)
+    --     function (c)
     --             c.maximized = not c.maximized
     --             c:raise()
     --         end ,
@@ -386,10 +386,10 @@ root.keys(globalkeys)
 -- Rules to apply to new clients (through the "manage" signal).
 awful.rules.rules = {
     -- Custom rules
-    { rule_any = { class = {"org.kde.kate", "kate"}},
-        properties = { opacity = 0.8 }},
-    { rule_any = { class = {"VSCodium"}},
+    { rule_any = { class = {"gedit"}, name = {"gedit"} },
         properties = { opacity = 0.85 }},
+    { rule_any = { class = {"VSCodium"}},
+        properties = { opacity = 0.9 }},
     { rule = { name = "Spotify"},
         properties = { tag = screen[2].tags[9], switch_to_tags = true }},
     -- { rule = { name = "GW2 — Kate" },
@@ -438,7 +438,8 @@ awful.rules.rules = {
           "Psensor - Temperature Monitor",
           "CoreCtrl",
           "Network Connections",
-          "Input Remapper"
+          "Input Remapper",
+          "Easy Effects"
         },
         role = {
           "AlarmWindow",  -- Thunderbird's calendar.
@@ -528,8 +529,8 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
-local paddingValue = { bottom = 15 }
-awful.screen.focused().padding = paddingValue;
+        local paddingValue = { bottom = 16 }
+	awful.screen.focused().padding = paddingValue;
 
 awful.spawn{ "/home/micro/.config/polybar/launch.sh" }
 -- }}}
