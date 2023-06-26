@@ -13,7 +13,7 @@ local dpi = beautiful.xresources.apply_dpi
 local offsetx = dpi(56)
 local offsety = dpi(300)
 local screen = awful.screen.focused()
-local icon_dir = "/home/micro/awesome/components/icons/volume/"
+local icon_dir = "/home/micro/.config/awesome/components/icons/volume/"
 
 
 -- ===================================================================
@@ -65,7 +65,7 @@ volume_adjust:setup {
 -- create a 2 second timer to hide the volume adjust
 -- component whenever the timer is started
 local hide_volume_adjust = gears.timer {
-   timeout = 2,
+   timeout = 3,
    autostart = true,
    callback = function()
       volume_adjust.visible = false

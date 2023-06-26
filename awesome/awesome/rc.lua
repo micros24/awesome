@@ -19,27 +19,11 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.hotkeys_popup.keys")
 require("components.volume-adjust")
 
-
--- Popup on volume change
-local show_volume_notification = function()
-    local command = "pactl list sinks | grep Volume | grep -oaE '..[0-9]%' | awk 'FNR == 4 {print}'"
-    awful.spawn.easy_async_with_shell(command, function(out) naughty.notify({ text = out, timeout = 1, position = "bottom_middle", replaces_id = 1}) end)
-end
+-- Polybar
+awful.spawn{ "/home/micro/.config/polybar/launch.sh" }
 
 -- Autorun
--- awful.spawn.with_shell("~/.config/awesome/autorun.sh")
-
--- Executing autostart applications
-os.execute("/usr/lib/polkit-kde-authentication-agent-1 &")
-os.execute("dbus-update-activation-environment --systemd XDG_CURRENT_DESKTOP &")
-os.execute("picom -b --config /home/micro/.config/picom/picom.conf &")
--- os.execute("corectrl &")
--- os.execute("xiccd &")
-os.execute("xfce4-clipman &")
-os.execute("blueman-applet &")
--- os.execute("easyeffects --gapplication-service &")
-os.execute("nm-applet --indicator &")
--- os.execute("psensor &")
+awful.spawn.with_shell("~/.config/awesome/autorun.sh")
 
 -- Screenshot function
 local function saved_screenshot(args)
@@ -288,12 +272,12 @@ clientkeys = gears.table.join(
     awful.key({ modkey, "Control" }, "t", function (c) 
             awful.titlebar.toggle(c) end,
         {description = "Show/Hide Titlebars", group="client"}),
-    -- awful.key({ "Control", "Mod1"}, "m",
-    --     function (c)
-    --             c.maximized = not c.maximized
-    --             c:raise()
-    --         end ,
-    --         {description = "(un)maximize", group = "client"}),
+    awful.key({ "Control", "Mod1"}, "m",
+            function (c)
+                c.maximized = not c.maximized
+                c:raise()
+            end ,
+            {description = "(un)maximize", group = "client"}),
 
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
               {description = "toggle floating", group = "client"}),
@@ -389,7 +373,7 @@ awful.rules.rules = {
     { rule_any = { class = {"gedit"}, name = {"gedit"} },
         properties = { opacity = 0.85 }},
     { rule_any = { class = {"VSCodium"}},
-        properties = { opacity = 0.9 }},
+        properties = { opacity = 0.85 }},
     { rule = { name = "Spotify"},
         properties = { tag = screen[2].tags[9], switch_to_tags = true }},
     -- { rule = { name = "GW2 — Kate" },
@@ -439,7 +423,8 @@ awful.rules.rules = {
           "CoreCtrl",
           "Network Connections",
           "Input Remapper",
-          "Easy Effects"
+          "Easy Effects",
+          "Friends List"
         },
         role = {
           "AlarmWindow",  -- Thunderbird's calendar.
@@ -529,8 +514,6 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
-        local paddingValue = { bottom = 16 }
-	awful.screen.focused().padding = paddingValue;
-
-awful.spawn{ "/home/micro/.config/polybar/launch.sh" }
+         -- local paddingValue = { bottom = 18 }
+	 -- awful.screen.focused().padding = paddingValue;
 -- }}}
