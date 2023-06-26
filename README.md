@@ -37,13 +37,15 @@ yay -S corectrl xiccd colord easyeffects psensor
 ## My personal installs
 
 ```
-yay -S awesome picom-jonaburg-git polybar wlogout-git rofi-lbonn-wayland polkit-kde-agent corectrl xiccd colord xfce4-clipman bluez bluez-utils blueman psensor easyeffects network-manager-applet pamixer kvantum firefox flatpak zsh input-remapper-git xlockmore-nomotif playerctl nano sudo file-roller bitwarden bleachbit cpupower fastfetch github-cli gopreload-git gwenview htop kompare konsole linux-cachyos-bore linux-cachyos-bore-headers linux-lts linux-xanmod linux-xanmod-headers lutris mangohud mpv obs-vkcapture pacman-contrib pavucontrol pinta proton-cachyos protonup-qt qt5ct r8168-dkms reflector timeshift ttf-font-awesome ttf-monaco ttf-roboto ttf-ubuntu-font-family wget wine wine-gecko wine-mono winetricks-git xf86-video-amdgpu sddm-git xorg-server util-linux ufw ttf-liberation ttf-dejavu ttf-hack intel-media-driver mesa libva-mesa-driver mesa-vdpau zsh-theme-powerlevel10k-git xorg-server xorg-apps gvfs vulkan-radeon vulkan-intel xdg-desktop-portal xdg-user-dirs pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber brave-bin gamemode obs-studio-tytan652 lsp-plugins gedit pcmanfm-qt breeze breeze-gtk lxappearance-gtk3
+yay -S awesome picom-jonaburg-git polybar wlogout-git rofi-lbonn-wayland polkit-kde-agent corectrl xiccd colord xfce4-clipman bluez bluez-utils blueman psensor easyeffects network-manager-applet pamixer kvantum firefox flatpak zsh input-remapper-git xlockmore-nomotif playerctl nano sudo file-roller bitwarden bleachbit cpupower fastfetch github-cli gopreload-git gwenview htop kompare konsole linux-cachyos-bore linux-cachyos-bore-headers linux-lts linux-xanmod linux-xanmod-headers lutris mangohud mpv obs-vkcapture pacman-contrib pavucontrol pinta proton-cachyos protonup-qt qt5ct r8168-dkms reflector timeshift ttf-font-awesome ttf-monaco ttf-roboto ttf-ubuntu-font-family wget wine wine-gecko wine-mono winetricks-git xf86-video-amdgpu sddm-git xorg-server util-linux ufw ttf-liberation ttf-dejavu ttf-hack intel-media-driver mesa libva-mesa-driver mesa-vdpau zsh-theme-powerlevel10k-git xorg-server xorg-apps gvfs vulkan-radeon vulkan-intel xdg-desktop-portal xdg-user-dirs pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber brave-bin gamemode obs-studio-tytan652 lsp-plugins gedit pcmanfm-qt breeze breeze-gtk lxappearance-gtk3 nitrogen
 
 flatpak install flathub com.spotify.Client
 flatpak install flathub com.github.tchx84.Flatseal
 ```
 
 Setup your themes using qt5ct and lxappearance.
+
+Setup your wallpaper using nitrogen.
 
 ## Installing MiBroSoft fonts
 
