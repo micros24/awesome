@@ -25,40 +25,6 @@ awful.spawn{ "/home/micro/.config/polybar/launch.sh" }
 -- Autorun
 awful.spawn.with_shell("~/.config/awesome/autorun.sh")
 
--- Screenshot function
-local function saved_screenshot(args)
-    local ss = awful.screenshot(args)
-
-    local function notify(self)
-        naughty.notification {
-            title     = self.file_name,
-            message   = "Screenshot saved",
-            icon      = self.surface,
-            icon_size = 128,
-        }
-    end
-
-    if args.auto_save_delay > 0 then
-        ss:connect_signal("file::saved", notify)
-    else
-        notify(ss)
-    end
-
-    return ss
-end
-
-client.connect_signal("request::default_keybindings", function()
-    -- Screenshot function
-    awful.keyboard.append_client_keybindings({
-        awful.key({modkey}, "Print",
-            function (c) saved_screenshot { auto_save_delay = 0, client = c } end ,
-            {description = "take client screenshot", group = "client"}),
-        awful.key({modkey, "Shift"}, "Print",
-            function (c) saved_screenshot { auto_save_delay = 0, interactive = true, client = c } end ,
-            {description = "take interactive client screenshot", group = "client"})
-    })
-end)
-
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -188,7 +154,7 @@ globalkeys = gears.table.join(
             awful.spawn("pcmanfm-qt") end,
         {description = "open file manager", group = "client"}),
     awful.key({ modkey, }, "r", function () 
-            awful.spawn("rofi -show") end,
+            awful.spawn("rofi -show drun") end,
         {description = "show runner", group = "client"}),
     awful.key({ modkey, }, "g", function () 
             awful.spawn("gedit /home/micro/GW2") end,
@@ -208,9 +174,6 @@ globalkeys = gears.table.join(
     awful.key({ modkey, }, "l", function () 
             awful.spawn("xlock -dpmsoff 60") end,
         {description = "lock screen", group = "client"}),
-    -- awful.key({ modkey, "Control"}, "l", function () 
-    --         awful.spawn.with_shell("pkexec /opt/mudfish/5.7.3/bin/mudrun") end,
-    --     {description = "mudfish", group = "client"}),
     awful.key({ modkey, }, "j", function () 
             awful.screen.focus_relative(1) end,
         {description = "focus the next screen", group = "screen"}),
@@ -218,9 +181,17 @@ globalkeys = gears.table.join(
         {description = "view previous", group = "tag"}),
     awful.key({ modkey, }, "Tab",  awful.tag.viewnext,
         {description = "view next", group = "tag"}),
-    
-    -- awful.key({ modkey, }, "Escape", awful.tag.history.restore,
-    --     {description = "go back", group = "tag"}),
+        
+    -- Screenshot bindings
+    awful.key({ "", }, "Print", function () 
+	awful.spawn.with_shell("spectacle -ab") end,
+        {description = "screenshot active window", group = "client"}),
+    awful.key({ modkey, }, "Print", function () 
+	awful.spawn.with_shell("spectacle -b") end,
+        {description = "screenshot all monitors", group = "client"}),
+    awful.key({ "Shift", }, "Print", function () 
+	awful.spawn.with_shell("spectacle -rb") end,
+        {description = "draw a rectangle to screenshot", group = "client"}),
         
     -- Media bindings
     awful.key({ "", }, "XF86AudioRaiseVolume", function () 
@@ -257,9 +228,9 @@ globalkeys = gears.table.join(
 
     -- Standard program
     awful.key({ modkey, "Control" }, "r", awesome.restart,
-              {description = "reload awesome", group = "awesome"}),
-    awful.key({ modkey, "Shift"   }, "q", awesome.quit,
-              {description = "quit awesome", group = "awesome"})
+              {description = "reload awesome", group = "awesome"})
+    -- awful.key({ modkey, "Shift"   }, "q", awesome.quit,
+    --          {description = "quit awesome", group = "awesome"})
 )
 
 clientkeys = gears.table.join(
@@ -371,9 +342,9 @@ root.keys(globalkeys)
 awful.rules.rules = {
     -- Custom rules
     { rule_any = { class = {"gedit"}, name = {"gedit"} },
-        properties = { opacity = 0.85 }},
+        properties = { opacity = 0.9 }},
     { rule_any = { class = {"VSCodium"}},
-        properties = { opacity = 0.85 }},
+        properties = { opacity = 0.9 }},
     { rule = { name = "Spotify"},
         properties = { tag = screen[2].tags[9], switch_to_tags = true }},
     -- { rule = { name = "GW2 — Kate" },
