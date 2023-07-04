@@ -6,10 +6,9 @@ run() {
     "$@"&
   fi
 }
-run "/usr/lib/polkit-kde-authentication-agent-1"
+run "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 run "dbus-update-activation-environment" --systemd XDG_CURRENT_DESKTOP
 run "picom" -b --config /home/micro/.config/picom/picom.conf
-run "sleep" 2
 run "blueman-applet"
 run "xiccd"
 run "xfce4-clipman"

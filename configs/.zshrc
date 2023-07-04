@@ -5,19 +5,39 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
-bindkey -e
-# End of lines configured by zsh-newuser-install
+
 # The following lines were added by compinstall
+
+zstyle ':completion:*' completer _complete _ignored _approximate
+zstyle ':completion:*' file-sort name
+zstyle ':completion:*' matcher-list '' '' '' ''
 zstyle :compinstall filename '/home/micro/.zshrc'
 
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.zshHistory
+HISTSIZE=10000
+SAVEHIST=10000
+# End of lines configured by zsh-newuser-install
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+alias ls='ls -lah --color=auto'
+alias grep='grep --color=auto'
+alias history='history 1'
+# alias pacman-i='sudo pacman -S'
+# alias pacman-u='sudo pacman -Rsn'
+# alias pacman-upg='sudo pacman -Syu'
+alias mudfish='firefox --new-window http://127.0.0.1:8282/ & sudo /opt/mudfish/5.7.3/bin/mudrun'
+alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias preload-refresh='gopreload-batch-refresh.sh'
+# alias linux-tkg-clone='git clone https://github.com/Frogging-Family/linux-tkg.git'
+
+
 
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
@@ -34,8 +54,7 @@ key[Left]="${terminfo[kcub1]}"
 key[Right]="${terminfo[kcuf1]}"
 key[PageUp]="${terminfo[kpp]}"
 key[PageDown]="${terminfo[knp]}"
-key[Control-Left]="${terminfo[kLFT5]}"
-key[Control-Right]="${terminfo[kRIT5]}"
+key[Shift-Tab]="${terminfo[kcbt]}"
 
 # setup key accordingly
 [[ -n "${key[Home]}"      ]] && bindkey -- "${key[Home]}"       beginning-of-line
@@ -49,8 +68,7 @@ key[Control-Right]="${terminfo[kRIT5]}"
 [[ -n "${key[Right]}"     ]] && bindkey -- "${key[Right]}"      forward-char
 [[ -n "${key[PageUp]}"    ]] && bindkey -- "${key[PageUp]}"     beginning-of-buffer-or-history
 [[ -n "${key[PageDown]}"  ]] && bindkey -- "${key[PageDown]}"   end-of-buffer-or-history
-[[ -n "${key[Control-Left]}"  ]] && bindkey -- "${key[Control-Left]}"  backward-word
-[[ -n "${key[Control-Right]}" ]] && bindkey -- "${key[Control-Right]}" forward-word
+[[ -n "${key[Shift-Tab]}" ]] && bindkey -- "${key[Shift-Tab]}"  reverse-menu-complete
 
 # Finally, make sure the terminal is in application mode, when zle is
 # active. Only then are the values from $terminfo valid.
@@ -62,16 +80,8 @@ if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
 fi
 
-alias ls='ls -lah --color=auto'
-alias grep='grep --color=auto'
-alias history='history 1'
-alias pacman-i='sudo pacman -S'
-alias pacman-u='sudo pacman -Rsn'
-alias pacman-upg='sudo pacman -Syu'
-# alias mudfish='cd /opt/mudfish/5.7.3/bin/ && sudo ./mudrun-headless'
-alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
-alias preload-refresh='gopreload-batch-refresh.sh'
-# alias linux-tkg-clone='git clone https://github.com/Frogging-Family/linux-tkg.git'
+key[Control-Left]="${terminfo[kLFT5]}"
+key[Control-Right]="${terminfo[kRIT5]}"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ -n "${key[Control-Left]}"  ]] && bindkey -- "${key[Control-Left]}"  backward-word
+[[ -n "${key[Control-Right]}" ]] && bindkey -- "${key[Control-Right]}" forward-word

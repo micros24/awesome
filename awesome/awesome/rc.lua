@@ -18,6 +18,7 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 require("components.volume-adjust")
+local screenshot = require("components.screenshot");
 
 -- Polybar
 awful.spawn{ "/home/micro/.config/polybar/launch.sh" }
@@ -183,15 +184,8 @@ globalkeys = gears.table.join(
         {description = "view next", group = "tag"}),
         
     -- Screenshot bindings
-    awful.key({ "", }, "Print", function () 
-	awful.spawn.with_shell("spectacle -ab") end,
+    awful.key({ }, "Print", scrot_window,
         {description = "screenshot active window", group = "client"}),
-    awful.key({ modkey, }, "Print", function () 
-	awful.spawn.with_shell("spectacle -b") end,
-        {description = "screenshot all monitors", group = "client"}),
-    awful.key({ "Shift", }, "Print", function () 
-	awful.spawn.with_shell("spectacle -rb") end,
-        {description = "draw a rectangle to screenshot", group = "client"}),
         
     -- Media bindings
     awful.key({ "", }, "XF86AudioRaiseVolume", function () 
@@ -341,14 +335,21 @@ root.keys(globalkeys)
 -- Rules to apply to new clients (through the "manage" signal).
 awful.rules.rules = {
     -- Custom rules
-    { rule_any = { class = {"gedit", "file-roller"}, name = {"gedit", "Archive Manager"} },
-        properties = { opacity = 0.9 }},
+    { rule_any = { 
+    	class = { 
+    		"gedit", 
+    		"file-roller"
+    	}, 
+    	name = {
+    		"gedit", 
+    		"Archive Manager", 
+    		"Input Remapper"
+    	}},
+        properties = { opacity = 0.85 }},
     { rule_any = { class = {"VSCodium"}},
         properties = { opacity = 0.9 }},
     { rule = { name = "Spotify"},
         properties = { tag = screen[2].tags[9], switch_to_tags = true }},
-    -- { rule = { name = "GW2 — Kate" },
-    --     properties = { tag = screen[2].tags[1] }},
     {rule = { name = "Psensor - Temperature Monitor" },
         properties = { ontop = true }}, 
         
@@ -370,7 +371,7 @@ awful.rules.rules = {
         instance = {
           "DTA",  -- Firefox addon DownThemAll.
           "copyq",  -- Includes session name in class.
-          "pinentry",
+          "pinentry"
         },
         class = {
           "Arandr",
@@ -395,7 +396,8 @@ awful.rules.rules = {
           "Network Connections",
           "Input Remapper",
           "Easy Effects",
-          "Friends List"
+          "Friends List",
+          "Bitwarden"
         },
         role = {
           "AlarmWindow",  -- Thunderbird's calendar.
