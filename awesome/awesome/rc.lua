@@ -341,7 +341,7 @@ root.keys(globalkeys)
 -- Rules to apply to new clients (through the "manage" signal).
 awful.rules.rules = {
     -- Custom rules
-    { rule_any = { class = {"gedit"}, name = {"gedit"} },
+    { rule_any = { class = {"gedit", "file-roller"}, name = {"gedit", "Archive Manager"} },
         properties = { opacity = 0.9 }},
     { rule_any = { class = {"VSCodium"}},
         properties = { opacity = 0.9 }},
@@ -350,7 +350,7 @@ awful.rules.rules = {
     -- { rule = { name = "GW2 — Kate" },
     --     properties = { tag = screen[2].tags[1] }},
     {rule = { name = "Psensor - Temperature Monitor" },
-        properties = { ontop = true }},
+        properties = { ontop = true }}, 
         
     -- All clients will match this rule.
     { rule = { },

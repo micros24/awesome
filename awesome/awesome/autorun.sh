@@ -18,5 +18,4 @@ run "nm-applet" --indicator
 run "psensor"
 run "nitrogen" --restore
 run "corectrl"
-run "pcmanfm-qt" --daemon-mode
 run "firefox"

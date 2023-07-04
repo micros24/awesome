@@ -76,22 +76,72 @@ local hide_volume_adjust = gears.timer {
 -- show volume-adjust when "volume_change" signal is emitted
 awesome.connect_signal("volume_change",
    function()
-      -- set new volume value
       awful.spawn.easy_async_with_shell(
          "pactl list sinks | grep Volume | grep -oaE '..[0-9]%' | awk 'FNR == 4 {print}' | sed 's/[^0-9]//g'",
          function(stdout)
-            local volume_level = tonumber(stdout)
-            volume_bar.value = volume_level
-            if (volume_level > 50) then
-               volume_icon:set_image(icon_dir .. "volume-high.png")
-            elseif (volume_level > 0) then
-               volume_icon:set_image(icon_dir .. "volume-low.png")
-            else
-               volume_icon:set_image(icon_dir .. "volume-mute.png")
+            if(stdout == nil) then 
+            	awful.spawn.easy_async_with_shell(
+         		   "pactl list sinks | grep Volume | grep -oaE '..[0-9]%' | awk 'FNR == 1 {print}' | sed 's/[^0-9]//g'",
+                  function(stdout2)
+                     local volume_level = tonumber(stdout2)
+                     volume_bar.value = volume_level
+                     if (volume_level > 75) then
+                        volume_icon:set_image(icon_dir .. "volume-high.png")
+                     elseif (volume_level > 0) then
+                        volume_icon:set_image(icon_dir .. "volume-low.png")
+                     else
+                        volume_icon:set_image(icon_dir .. "volume-mute.png")
+                     end
+                  end,
+                  false
+               )
+            elseif (tonumber(stdout) == 100) then
+               awful.spawn.easy_async_with_shell(
+         		   "pactl list sinks | grep Volume | grep -oaE '..[0-9]%' | awk 'FNR == 1 {print}' | sed 's/[^0-9]//g'",
+                  function(stdout3)
+                     local volume_level = tonumber(stdout3)
+                     volume_bar.value = volume_level
+                     if (volume_level > 75) then
+                        volume_icon:set_image(icon_dir .. "volume-high.png")
+                     elseif (volume_level > 0) then
+                        volume_icon:set_image(icon_dir .. "volume-low.png")
+                     else
+                        volume_icon:set_image(icon_dir .. "volume-mute.png")
+                     end
+                  end,
+                  false
+               )
+	         else
+               local volume_level = tonumber(stdout)
+               volume_bar.value = volume_level
+               if (volume_level > 75) then
+                  volume_icon:set_image(icon_dir .. "volume-high.png")
+               elseif (volume_level > 0) then
+                  volume_icon:set_image(icon_dir .. "volume-low.png")
+               else
+                  volume_icon:set_image(icon_dir .. "volume-mute.png")
+               end
             end
-         end,
-         false
+	    end,
+	    false
       )
+   
+      -- set new volume value
+      -- awful.spawn.easy_async_with_shell(
+      --    "pactl list sinks | grep Volume | grep -oaE '..[0-9]%' | awk 'FNR == 4 {print}' | sed 's/[^0-9]//g'",
+      --    function(stdout)
+      --       local volume_level = tonumber(stdout)
+      --       volume_bar.value = volume_level
+      --       if (volume_level > 50) then
+      --          volume_icon:set_image(icon_dir .. "volume-high.png")
+      --       elseif (volume_level > 0) then
+      --          volume_icon:set_image(icon_dir .. "volume-low.png")
+      --       else
+      --          volume_icon:set_image(icon_dir .. "volume-mute.png")
+      --       end
+      --    end,
+      --    false
+      -- )
 
       -- make volume_adjust component visible
       if volume_adjust.visible then
