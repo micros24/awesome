@@ -47,7 +47,23 @@ yay -S corectrl xiccd colord easyeffects psensor
 # My personal installs
 
 ```
-yay -S r8168-dkms awesome picom-jonaburg-git polybar-git wlogout-git rofi polkit-gnome corectrl xiccd colord xfce4-clipman bluez bluez-utils blueman psensor easyeffects network-manager-applet kvantum firefox flatpak zsh input-remapper-git xlockmore-nomotif playerctl file-roller bitwarden bleachbit cpupower fastfetch github-cli gopreload-git lximage-qt htop linux-xanmod-bore linux-lts mpv obs-vkcapture pacman-contrib pavucontrol pinta proton-cachyos protonup-qt qt5ct r8168-dkms reflector timeshift ttf-font-awesome ttf-monaco ttf-roboto ttf-ubuntu-font-family xf86-video-amdgpu sddm-git xorg-server util-linux ufw ttf-liberation ttf-dejavu ttf-hack ttf-meslo-nerd-font-powerlevel10k intel-media-driver mesa libva-mesa-driver mesa-vdpau zsh-theme-powerlevel10k-git xorg-server xorg-apps gvfs vulkan-radeon vulkan-intel xdg-desktop-portal pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber brave-bin obs-studio-tytan652 lsp-plugins gedit pcmanfm-qt breeze breeze-gtk lxappearance-gtk3 nitrogen font-manager scrot meld pkgstats seahorse librespot spotify-qt alacritty zsh-completions reversal-icon-theme-git ffmpegthumbnailer font-manager libinput notification-daemon pamixer
+yay -S xdg-user-dirs r8168-dkms udisks2 awesome picom-jonaburg-git polybar-git \
+	wlogout-git rofi polkit-gnome corectrl xiccd colord xfce4-clipman bluez \
+	bluez-utils blueman psensor easyeffects network-manager-applet kvantum \
+	firefox flatpak zsh input-remapper-git xlockmore-nomotif playerctl \
+	file-roller bitwarden bleachbit cpupower fastfetch github-cli gopreload-git \
+	lximage-qt htop linux-xanmod-bore linux-lts mpv obs-vkcapture pacman-contrib \
+	pavucontrol pinta proton-cachyos protonup-qt qt5ct r8168-dkms reflector \
+	timeshift ttf-font-awesome ttf-monaco ttf-roboto ttf-ubuntu-font-family \
+	xf86-video-amdgpu sddm-git xorg-server util-linux ufw ttf-liberation \
+	ttf-dejavu ttf-hack ttf-meslo-nerd-font-powerlevel10k intel-media-driver \
+	mesa libva-mesa-driver mesa-vdpau zsh-theme-powerlevel10k-git xorg-server \
+	xorg-apps gvfs vulkan-radeon vulkan-intel xdg-desktop-portal pipewire \
+	pipewire-alsa pipewire-pulse pipewire-jack wireplumber brave-bin \
+	obs-studio-tytan652 lsp-plugins gedit pcmanfm-qt breeze breeze-gtk \
+	lxappearance-gtk3 nitrogen font-manager scrot meld pkgstats seahorse \
+	alacritty zsh-completions reversal-icon-theme-git ffmpegthumbnailer \
+	font-manager libinput notification-daemon pamixer
 
 flatpak install flathub com.spotify.Client
 flatpak install flathub com.github.tchx84.Flatseal
@@ -58,7 +74,7 @@ flatpak install flathub com.github.tchx84.Flatseal
 Install mudfish from their website (https://mudfish.net/download).
 
 ```
-yay -S proton-cachyos steam-native-runtime lutris vkbasalt-git gamemode mangohud schedtool schedtoold wine wine-gecko wine-mono winetricks-git wmctrl
+yay -S proton-cachyos steam-native-runtime lutris vkbasalt-git gamemode lib32-gamemode mangohud schedtool schedtoold wine wine-gecko wine-mono winetricks-git wmctrl
 ```
 
 # Themeing
