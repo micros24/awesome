@@ -85,6 +85,8 @@ yay -S proton-cachyos steam-native-runtime lutris vkbasalt-git gamemode lib32-ga
 
 - Setup your wallpaper using nitrogen.
 
+- Setup global font to EB Garamond:size:14.
+
 ## Setup zsh
 
 ```
