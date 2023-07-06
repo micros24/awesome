@@ -79,7 +79,7 @@ awesome.connect_signal("volume_change",
       awful.spawn.easy_async_with_shell(
          "pactl list sinks | grep Volume | grep -oaE '..[0-9]%' | awk 'FNR == 4 {print}' | sed 's/[^0-9]//g'",
          function(stdout)
-            if(stdout == nil) then 
+            if(stdout == "") then 
             	awful.spawn.easy_async_with_shell(
          		   "pactl list sinks | grep Volume | grep -oaE '..[0-9]%' | awk 'FNR == 1 {print}' | sed 's/[^0-9]//g'",
                   function(stdout2)
