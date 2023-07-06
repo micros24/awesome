@@ -11,7 +11,7 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.font          = "sans 10"
+theme.font          = "EB Garamond 14"
 
 theme.bg_normal     = "#222222"
 theme.bg_focus      = "#535d6c"
@@ -25,7 +25,7 @@ theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
 
 theme.useless_gap   = 0
-theme.border_width  = 1
+theme.border_width  = 0
 theme.border_normal = "#00000000"
 theme.border_focus  = "#7c4dff"
 theme.border_marked = "#91231c"
