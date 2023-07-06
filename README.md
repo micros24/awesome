@@ -122,7 +122,9 @@ Filesystem:
 Environment:
 
 > ICON_THEME=Reversal-purple-dark
+
 > QT_STYLE_OVERRIDE=kvantum
+
 > GTK_THEME=Layan-Dark
 
 # Essential configurations
