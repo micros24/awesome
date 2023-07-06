@@ -5,8 +5,7 @@
 #
 LD_BIND_NOW=1
 # MOZ_ENABLE_WAYLAND=1
-# MOZ_DRM_DEVICE=/dev/dri/card1
-# KWIN_DRM_DEVICES=/dev/dri/card1:/dev/dri/card0
+MOZ_DRM_DEVICE=/dev/dri/card1
 XCURSOR_SIZE=24
 XCURSOR_THEME=breeze_cursors
 QT_STYLE_OVERRIDE=kvantum

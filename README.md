@@ -6,6 +6,11 @@
 sudo pacman-key --recv-keys F3B607488DB35A47 --keyserver keyserver.ubuntu.com
 sudo pacman-key --lsign-key F3B607488DB35A47
 sudo pacman -U 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-keyring-2-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-mirrorlist-17-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-v3-mirrorlist-17-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-v4-mirrorlist-5-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/pacman-6.0.2-10-x86_64.pkg.tar.zst'
+```
+
+Edit /etc/pacman.conf depending on your CPU's architecture (x86-64-v3 or x86_64-v4) (https://wiki.cachyos.org/en/home/Repo) then execute...
+
+```
 sudo pacman -Syyuu
 ```
 
@@ -26,6 +31,8 @@ yay -Y --devel --save
 yay --editmenu --nodiffmenu --save
 ```
 
+Reboot...
+
 # Installing my awesome configs
 
 ## Mandatory packages
@@ -33,12 +40,12 @@ yay --editmenu --nodiffmenu --save
 Picom is my compositor. Polybar is my status bar. wlogout is my logout screen. rofi is my application runner. xfce4-clipman is my clipboard manager.
 
 ```
-yay -S xdg-user-dirs xdg-desktop-portal awesome picom-jonaburg-git polybar-git wlogout-git rofi polkit-gnome xfce4-clipman bluez bluez-utils blueman network-manager-applet xlockmore-nomotif playerctl pavucontrol scrot pcmanfm-qt alacritty sddm-git gnome-keyring pamixer
+yay -S xdg-user-dirs xdg-desktop-portal awesome-git picom-jonaburg-git polybar-git wlogout-git rofi polkit-gnome xfce4-clipman-plugin bluez bluez-utils blueman network-manager-applet xlockmore-nomotif playerctl pavucontrol scrot pcmanfm-qt alacritty sddm-git gnome-keyring pamixer
 ```
 
 ## Optional packages
 
-Please change rc.lua inside the awesome folder to cater if you installed any of the optional packages.
+Please change autorun.sh inside the awesome folder to cater if you installed any of the optional packages.
 
 ```
 yay -S corectrl xiccd colord easyeffects psensor
@@ -47,7 +54,22 @@ yay -S corectrl xiccd colord easyeffects psensor
 # My personal installs
 
 ```
-yay -S r8168-dkms awesome picom-jonaburg-git polybar-git wlogout-git rofi polkit-gnome corectrl xiccd colord xfce4-clipman bluez bluez-utils blueman psensor easyeffects network-manager-applet kvantum firefox flatpak zsh input-remapper-git xlockmore-nomotif playerctl file-roller bitwarden bleachbit cpupower fastfetch github-cli gopreload-git lximage-qt htop linux-xanmod-bore linux-lts mpv obs-vkcapture pacman-contrib pavucontrol pinta proton-cachyos protonup-qt qt5ct r8168-dkms reflector timeshift ttf-font-awesome ttf-monaco ttf-roboto ttf-ubuntu-font-family xf86-video-amdgpu sddm-git xorg-server util-linux ufw ttf-liberation ttf-dejavu ttf-hack ttf-meslo-nerd-font-powerlevel10k intel-media-driver mesa libva-mesa-driver mesa-vdpau zsh-theme-powerlevel10k-git xorg-server xorg-apps gvfs vulkan-radeon vulkan-intel xdg-desktop-portal pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber brave-bin obs-studio-tytan652 lsp-plugins gedit pcmanfm-qt breeze breeze-gtk lxappearance-gtk3 nitrogen font-manager scrot meld pkgstats seahorse librespot spotify-qt alacritty zsh-completions reversal-icon-theme-git ffmpegthumbnailer font-manager libinput notification-daemon pamixer
+yay -S r8168-dkms awesome-git picom-jonaburg-git polybar-git wlogout-git rofi \
+    polkit-gnome corectrl xiccd colord xfce4-clipman-plugin bluez bluez-utils \
+    blueman psensor easyeffects network-manager-applet kvantum firefox \
+    flatpak zsh input-remapper-git xlockmore-nomotif playerctl file-roller \
+    bitwarden bleachbit cpupower fastfetch github-cli gopreload-git lximage-qt \
+    htop linux-xanmod-bore linux-xanmod-bore-headers linux-lts mpv obs-vkcapture \
+    pacman-contrib pavucontrol pinta qt5c reflector timeshift ttf-font-awesome \
+    ttf-monaco ttf-roboto ttf-ubuntu-font-family xf86-video-amdgpu sddm-git \
+    util-linux ufw ttf-liberation ttf-dejavu ttf-hack ttf-meslo-nerd-font-powerlevel10k \
+    intel-media-driver mesa libva-mesa-driver mesa-vdpau zsh-theme-powerlevel10k-git \
+    gvfs vulkan-radeon vulkan-intel xdg-desktop-portal pipewire pipewire-alsa \
+    pipewire-pulse pipewire-jack wireplumber brave-bin obs-studio-tytan652 \
+    lsp-plugins gedit pcmanfm-qt breeze breeze-gtk lxappearance-gtk3 nitrogen \
+    font-manager scrot meld pkgstats seahorse alacritty zsh-completions \
+    ffmpegthumbnailer libinput pamixer ttf-ebgaramond gnu-free-fonts noto-fonts \
+    noto-fonts-emoji calf
 
 flatpak install flathub com.spotify.Client
 flatpak install flathub com.github.tchx84.Flatseal
@@ -63,16 +85,18 @@ yay -S proton-cachyos steam-native-runtime lutris vkbasalt-git gamemode mangohud
 
 # Themeing
 
+## Theme installation
+
+- https://github.com/yeyushengfan258/Reversal-icon-theme
+- https://github.com/vinceliuice/Layan-gtk-theme
 - Setup your themes and icons using qt5ct, kvantum, and lxappearance.
-
 - Setup your SDDM theme.
-
 - Setup your wallpaper using nitrogen.
 
 ## Setup zsh
 
 ```
-sudo chsh -s /usr/bin/zsh
+chsh -s /usr/bin/zsh
 ```
 
 Logout and log back in then check your default shell with `echo $SHELL`, then...
@@ -84,7 +108,7 @@ p10k configure
 ## Setup flatpak themes
 
 ```
-com.github.tchx84.Flatseal.desktop
+flatpak run com.github.tchx84.Flatseal
 ```
 
 Filesystem:
@@ -95,20 +119,11 @@ Filesystem:
 
 Environment:
 
+> ICON_THEME=Reversal-purple-dark
 > QT_STYLE_OVERRIDE=kvantum
 > GTK_THEME=Layan-Dark
 
 # Essential configurations
-
-## Setup notification-daemon
-
-/usr/share/dbus-1/services/org.freedesktop.Notifications.service
-
-```
-[D-BUS Service]
-Name=org.freedesktop.Notifications
-Exec=/usr/lib/notification-daemon-1.0/notification-daemon
-```
 
 ## Installing MiBroSoft fonts
 
@@ -124,14 +139,14 @@ Set the font of your terminal of choice to MesloLGS NF
 
 ```
 sudo systemctl enable sddm.service
-sudo systemctl enable networkmanager.service
+sudo systemctl enable NetworkManager.service
 sudo systemctl enable bluetooth.service
 sudo systemctl enable colord.service
 sudo systemctl enable cpupower.service
 sudo systemctl enable input-remapper.service
-sudo systemctl enable udisks2.service
 sudo systemctl enable gopreload.service
 sudo systemctl enable schedtoold.service
+sudo systemctl enable udisks2.service
 sudo systemctl enable ufw.service
 sudo systemctl enable reflector.timer
 sudo systemctl enable paccache.timer

@@ -8,7 +8,7 @@ run() {
 }
 run "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 run "dbus-update-activation-environment" --systemd XDG_CURRENT_DESKTOP
-run "picom" -b --config /home/micro/.config/picom/picom.conf
+run "picom" -b
 run "blueman-applet"
 run "xiccd"
 run "xfce4-clipman"

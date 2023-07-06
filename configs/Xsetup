@@ -1,0 +1,6 @@
+#!/bin/sh
+# /usr/share/sddm/scripts/
+# Xsetup - run as root before the login dialog appears
+
+xrandr --output DP-1-1 --mode 1440x900 --pos 230x0 --noprimary
+xrandr --output HDMI-A-1 --mode 1920x1080 --rate 75 --primary --pos 0x900
