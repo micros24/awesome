@@ -80,7 +80,7 @@ flatpak install flathub com.github.tchx84.Flatseal
 Install mudfish from their website (https://mudfish.net/download).
 
 ```
-yay -S proton-cachyos steam-native-runtime lutris vkbasalt-git gamemode mangohud schedtool schedtoold wine wine-gecko wine-mono winetricks-git wmctrl
+yay -S proton-cachyos steam-native-runtime lutris vkbasalt-git gamemode lib32-gamemode mangohud schedtool schedtoold wine wine-gecko wine-mono winetricks-git wmctrl
 ```
 
 # Themeing
@@ -92,6 +92,8 @@ yay -S proton-cachyos steam-native-runtime lutris vkbasalt-git gamemode mangohud
 - Setup your themes and icons using qt5ct, kvantum, and lxappearance.
 - Setup your SDDM theme.
 - Setup your wallpaper using nitrogen.
+
+- Setup global font to EB Garamond:size:14.
 
 ## Setup zsh
 
