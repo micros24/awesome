@@ -24,11 +24,13 @@ theme.fg_focus      = "#ffffff"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
 
-theme.useless_gap   = 0
-theme.border_width  = 0
-theme.border_normal = "#00000000"
+theme.useless_gap   = dpi(4)
+theme.border_width  = dpi(2)
+theme.border_normal = "#393539"
 theme.border_focus  = "#7c4dff"
 theme.border_marked = "#91231c"
+
+theme.gap_single_client = false
 
 -- There are other variable sets
 -- overriding the default one when

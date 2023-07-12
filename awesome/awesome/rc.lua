@@ -68,42 +68,6 @@ awful.layout.layouts = {
 }
 -- }}}
 
--- -- {{{ Menu
--- -- Create a launcher widget and a main menu
--- myawesomemenu = {
---    { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
---    { "manual", terminal .. " -e man awesome" },
---    { "edit config", editor_cmd .. " " .. awesome.conffile },
---    { "restart", awesome.restart },
---    { "quit", function() awesome.quit() end },
--- }
--- 
--- mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
---                                     { "open terminal", terminal }
---                                   }
---                         })
--- 
--- -- Menubar configuration
--- menubar.utils.terminal = terminal -- Set the terminal for applications that require it
--- -- }}}
-
--- {{{ Wibar
---local function set_wallpaper(s)
---    -- Wallpaper
---    if beautiful.wallpaper then
-        -- local wallpaper = beautiful.wallpaper
-        -- If wallpaper is a function, call it with the screen
-        -- if type(wallpaper) == "function" then
-        --     wallpaper = wallpaper(s)
-        -- end
-        -- gears.wallpaper.maximized(wallpaper, s, false)
---        gears.wallpaper.fit(beautiful.wallpaper, s)
---    end
---end 
-
--- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
--- screen.connect_signal("property::geometry", set_wallpaper)
-
 for s in screen do    
     if s.index == 1 then
         awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
@@ -315,21 +279,30 @@ awful.rules.rules = {
     -- Custom rules
     { rule_any = { 
     	class = { 
-    		"gedit", 
-    		"file-roller"
-    	}, 
-    	name = {
-    		"gedit", 
-    		"Archive Manager", 
-    		"Input Remapper"
+    		"Gedit", 
+    		"File-roller",
+    		"Input-remapper-gtk"
     	}},
         properties = { opacity = 0.85 }},
     { rule_any = { class = {"VSCodium"}},
         properties = { opacity = 0.9 }},
     { rule = { name = "Spotify"},
         properties = { tag = screen[2].tags[9], switch_to_tags = true }},
-    {rule = { name = "Psensor - Temperature Monitor" },
-        properties = { ontop = true }}, 
+    {rule = { class = "Psensor" },
+        properties = { 
+        	ontop = true,
+        	floating = true,
+        	placement = awful.placement.centered,
+        	width     = 800,
+        	height    = 550,
+    }}, 
+    { rule_any = { class = {"easyeffects"}},
+        properties = { 
+        	floating = true,
+        	placement = awful.placement.centered,
+        	width = 1536,
+        	height = 768
+    }},
         
     -- All clients will match this rule.
     { rule = { },
@@ -361,7 +334,9 @@ awful.rules.rules = {
           "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
           "Wpa_gui",
           "veromix",
-          "xtightvncviewer"},
+          "xtightvncviewer",
+          "File-roller",
+          "Input-remapper-gtk"},
 
         -- Note that the name property shown in xprop might be set slightly after creation of the client
         -- and the name shown there might not match defined rules here.
@@ -369,11 +344,8 @@ awful.rules.rules = {
           "Event Tester",  -- xev.
           "Volume Control",
           "Bluetooth Devices",
-          "Psensor - Temperature Monitor",
           "CoreCtrl",
           "Network Connections",
-          "Input Remapper",
-          "Easy Effects",
           "Friends List",
           "Bitwarden"
         },
@@ -383,7 +355,7 @@ awful.rules.rules = {
           -- "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
         }
       }, properties = { 
-        floating = true, 
+        floating = true,
         placement = awful.placement.centered,
         width     = 1024,
         height    = 768,
@@ -459,11 +431,23 @@ end)
 
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal("mouse::enter", function(c)
-    c:emit_signal("request::activate", "mouse_enter", {raise = true})
+    c:emit_signal("request::activate", "mouse_enter", {raise = false})
 end)
 
---client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
---client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
+client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+
+-- No borders when rearranging only 1 non-floating or maximized client
+screen.connect_signal("arrange", function (s)
+    local only_one = #s.tiled_clients == 1
+    for _, c in pairs(s.clients) do
+        if only_one and not c.floating or c.maximized then
+            c.border_width = 0
+        else
+            c.border_width = beautiful.border_width -- your border width
+        end
+    end
+end)
 
          -- local paddingValue = { bottom = 18 }
 	 -- awful.screen.focused().padding = paddingValue;

@@ -40,7 +40,10 @@ Reboot...
 Picom is my compositor. Polybar is my status bar. wlogout is my logout screen. rofi is my application runner. xfce4-clipman is my clipboard manager.
 
 ```
-yay -S xdg-user-dirs xdg-desktop-portal awesome-git picom-jonaburg-git polybar-git wlogout-git rofi polkit-gnome xfce4-clipman-plugin bluez bluez-utils blueman network-manager-applet xlockmore-nomotif playerctl pavucontrol scrot pcmanfm-qt alacritty sddm-git gnome-keyring pamixer
+yay -S xdg-user-dirs xdg-desktop-portal awesome-git picom-jonaburg-git polybar-git \
+    wlogout-git rofi polkit-gnome xfce4-clipman-plugin bluez bluez-utils blueman \
+    network-manager-applet xlockmore-nomotif playerctl pavucontrol scrot \
+    pcmanfm-qt alacritty sddm-git gnome-keyring pamixer
 ```
 
 ## Optional packages
@@ -56,20 +59,18 @@ yay -S corectrl xiccd colord easyeffects psensor
 ```
 yay -S r8168-dkms awesome-git picom-jonaburg-git polybar-git wlogout-git rofi \
     polkit-gnome corectrl xiccd colord xfce4-clipman-plugin bluez bluez-utils \
-    blueman psensor easyeffects network-manager-applet kvantum firefox \
+    blueman psensor easyeffects network-manager-applet kvantum firefox pamixer \
     flatpak zsh input-remapper-git xlockmore-nomotif playerctl file-roller \
     bitwarden bleachbit cpupower fastfetch github-cli gopreload-git lximage-qt \
-    htop linux-xanmod-bore linux-xanmod-bore-headers linux-lts mpv obs-vkcapture \
-    pacman-contrib pavucontrol pinta qt5c reflector timeshift ttf-font-awesome \
-    ttf-monaco ttf-roboto ttf-ubuntu-font-family xf86-video-amdgpu sddm-git \
-    util-linux ufw ttf-liberation ttf-dejavu ttf-hack ttf-meslo-nerd-font-powerlevel10k \
-    intel-media-driver mesa libva-mesa-driver mesa-vdpau zsh-theme-powerlevel10k-git \
-    gvfs vulkan-radeon vulkan-intel xdg-desktop-portal pipewire pipewire-alsa \
-    pipewire-pulse pipewire-jack wireplumber brave-bin obs-studio-tytan652 \
-    lsp-plugins gedit pcmanfm-qt breeze breeze-gtk lxappearance-gtk3 nitrogen \
-    font-manager scrot meld pkgstats seahorse alacritty zsh-completions \
-    ffmpegthumbnailer libinput pamixer ttf-ebgaramond gnu-free-fonts noto-fonts \
-    noto-fonts-emoji calf
+    htop linux-xanmod-bore linux-xanmod-bore-headers linux-lts mpv \
+    pacman-contrib pavucontrol pinta qt5c reflector timeshift xf86-video-amdgpu \
+    sddm-git util-linux ufw intel-media-driver mesa libva-mesa-driver mesa-vdpau \
+    zsh-theme-powerlevel10k-git gvfs vulkan-radeon vulkan-intel calf \
+    xdg-desktop-portal pipewire pipewire-alsa pipewire-pulse pipewire-jack \
+    wireplumber brave-bin obs-studio-tytan652 lsp-plugins gedit pcmanfm-qt \
+    breeze breeze-gtk lxappearance-gtk3 nitrogen font-manager scrot meld \
+    pkgstats seahorse alacritty zsh-completions ffmpegthumbnailer libinput \
+
 
 flatpak install flathub com.spotify.Client
 flatpak install flathub com.github.tchx84.Flatseal
@@ -80,10 +81,34 @@ flatpak install flathub com.github.tchx84.Flatseal
 Install mudfish from their website (https://mudfish.net/download).
 
 ```
-yay -S proton-cachyos steam-native-runtime lutris vkbasalt-git gamemode lib32-gamemode mangohud schedtool schedtoold wine wine-gecko wine-mono winetricks-git wmctrl
+yay -S proton-cachyos steam-native-runtime lutris vkbasalt lib32-vkbasalt \
+    gamemode lib32-gamemode mangohud schedtool schedtoold wine wine-gecko \
+    wine-mono winetricks-git wmctrl obs-vkcapture
 ```
 
 # Themeing
+
+## Fonts
+
+```
+yay -S ttf-monaco ttf-roboto ttf-ubuntu-font-family ttf-dejavu ttf-hack \
+    ttf-meslo-nerd-font-powerlevel10k ttf-font-awesome ttf-ebgaramond \
+    gnu-free-fonts noto-fonts noto-fonts-emoji ttf-pacifico ttf-ancient-fonts \
+    ttf-ubuntu-arabic ttf-freebanglafont ttf-ubraille noto-fonts-cjk ttf-mplus-git \
+    ttf-kopubworld ttf-hannom ttf-paratype ttf-google-fonts-git persian-fonts \
+    fonts-tlwg ttf-cm-unicode
+
+```
+
+### Installing MiBroSoft fonts
+
+Follow instructions from https://wiki.archlinux.org/title/Microsoft_fonts before installing the package below
+
+```
+ttf-ms-win11
+```
+
+Set the font of your terminal of choice to MesloLGS NF
 
 ## Theme installation
 
@@ -92,7 +117,6 @@ yay -S proton-cachyos steam-native-runtime lutris vkbasalt-git gamemode lib32-ga
 - Setup your themes and icons using qt5ct, kvantum, and lxappearance.
 - Setup your SDDM theme.
 - Setup your wallpaper using nitrogen.
-
 - Setup global font to EB Garamond:size:14.
 
 ## Setup zsh
@@ -116,7 +140,9 @@ flatpak run com.github.tchx84.Flatseal
 Filesystem:
 
 > xdg-config/Kvantum:ro
+
 > ~/.themes
+
 > ~/.icons
 
 Environment:
@@ -128,16 +154,6 @@ Environment:
 > GTK_THEME=Layan-Dark
 
 # Essential configurations
-
-## Installing MiBroSoft fonts
-
-Follow instructions from https://wiki.archlinux.org/title/Microsoft_fonts before installing the package below
-
-```
-ttf-ms-win11
-```
-
-Set the font of your terminal of choice to MesloLGS NF
 
 ## Enabling services and timers
 
