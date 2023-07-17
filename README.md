@@ -40,7 +40,7 @@ Reboot...
 Picom is my compositor. Polybar is my status bar. wlogout is my logout screen. rofi is my application runner. xfce4-clipman is my clipboard manager.
 
 ```
-yay -S xdg-user-dirs xdg-desktop-portal awesome-git picom-jonaburg-git polybar-git \
+yay -S xdg-user-dirs xdg-desktop-portal awesome-git picom-git polybar-git \
     wlogout-git rofi polkit-gnome xfce4-clipman-plugin bluez bluez-utils blueman \
     network-manager-applet xlockmore-nomotif playerctl pavucontrol scrot \
     pcmanfm-qt alacritty sddm-git gnome-keyring pamixer
@@ -57,20 +57,20 @@ yay -S corectrl xiccd colord easyeffects psensor
 # My personal installs
 
 ```
-yay -S r8168-dkms awesome-git picom-jonaburg-git polybar-git wlogout-git rofi \
+yay -S r8168-dkms awesome-git picom-git polybar-git wlogout-git rofi \
     polkit-gnome corectrl xiccd colord xfce4-clipman-plugin bluez bluez-utils \
     blueman psensor easyeffects network-manager-applet kvantum firefox pamixer \
     flatpak zsh input-remapper-git xlockmore-nomotif playerctl file-roller \
     bitwarden bleachbit cpupower fastfetch github-cli gopreload-git lximage-qt \
     htop linux-xanmod-bore linux-xanmod-bore-headers linux-lts mpv \
-    pacman-contrib pavucontrol pinta qt5c reflector timeshift xf86-video-amdgpu \
+    pacman-contrib pavucontrol gimp qt5c reflector timeshift xf86-video-amdgpu \
     sddm-git util-linux ufw intel-media-driver mesa libva-mesa-driver mesa-vdpau \
     zsh-theme-powerlevel10k-git gvfs vulkan-radeon vulkan-intel calf \
     xdg-desktop-portal pipewire pipewire-alsa pipewire-pulse pipewire-jack \
-    wireplumber brave-bin obs-studio-tytan652 lsp-plugins gedit pcmanfm-qt \
+    wireplumber brave-bin obs-studio-tytan652 lsp-plugins kate pcmanfm-qt \
     breeze breeze-gtk lxappearance-gtk3 nitrogen font-manager scrot meld \
     pkgstats seahorse alacritty zsh-completions ffmpegthumbnailer libinput \
-
+    freetype2 rng-tools dbus-broker ananicy-cpp cachyos-ananicy-rules-git
 
 flatpak install flathub com.spotify.Client
 flatpak install flathub com.github.tchx84.Flatseal
@@ -78,11 +78,11 @@ flatpak install flathub com.github.tchx84.Flatseal
 
 ## Setting up games
 
-Install mudfish from their website (https://mudfish.net/download).
+Install mudfish from their website (https://mudfish.net/download)
 
 ```
 yay -S proton-cachyos steam-native-runtime lutris vkbasalt lib32-vkbasalt \
-    gamemode lib32-gamemode mangohud schedtool schedtoold wine wine-gecko \
+    mangohud wine wine-gecko vulkan-icd-loader lib32-vulkan-icd-loader \
     wine-mono winetricks-git wmctrl obs-vkcapture
 ```
 
@@ -96,7 +96,7 @@ yay -S ttf-monaco ttf-roboto ttf-ubuntu-font-family ttf-dejavu ttf-hack \
     gnu-free-fonts noto-fonts noto-fonts-emoji ttf-pacifico ttf-ancient-fonts \
     ttf-ubuntu-arabic ttf-freebanglafont ttf-ubraille noto-fonts-cjk ttf-mplus-git \
     ttf-kopubworld ttf-hannom ttf-paratype ttf-google-fonts-git persian-fonts \
-    fonts-tlwg ttf-cm-unicode
+    fonts-tlwg ttf-cm-unicode ttf-liberation
 
 ```
 
@@ -168,6 +168,9 @@ sudo systemctl enable gopreload.service
 sudo systemctl enable schedtoold.service
 sudo systemctl enable udisks2.service
 sudo systemctl enable ufw.service
+sudo systemctl enable dbus-broker.service
+sudo systemctl enable rngd.service
+sudo systemctl enable ananicy-cpp.service
 sudo systemctl enable reflector.timer
 sudo systemctl enable paccache.timer
 sudo systemctl enable fstrim.timer

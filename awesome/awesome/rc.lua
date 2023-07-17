@@ -100,7 +100,7 @@ globalkeys = gears.table.join(
             awful.spawn("rofi -show drun") end,
         {description = "show runner", group = "client"}),
     awful.key({ modkey, }, "g", function () 
-            awful.spawn("gedit /home/micro/GW2") end,
+            awful.spawn("kate /home/micro/GW2") end,
         {description = "open GW2 daily list", group = "client"}),
     awful.key({ modkey, }, "Return", function () 
             awful.spawn(terminal) end,
@@ -279,7 +279,7 @@ awful.rules.rules = {
     -- Custom rules
     { rule_any = { 
     	class = { 
-    		"Gedit", 
+    		"kate", 
     		"File-roller",
     		"Input-remapper-gtk"
     	}},
