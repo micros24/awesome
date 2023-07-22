@@ -126,7 +126,7 @@ globalkeys = gears.table.join(
         {description = "view next", group = "tag"}),
         
     -- Screenshot bindings
-    awful.key({ }, "Print", scrot_window,
+     awful.key({ modkey, }, "Print", scrot_window,
         {description = "screenshot active window", group = "client"}),
         
     -- Media bindings

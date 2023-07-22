@@ -37,7 +37,7 @@ end
 
 function scrot_callback(text)
     naughty.notify({
-        text = text,
+        text = "",
         timeout = 2
     })
 end

@@ -17,4 +17,5 @@ run "nm-applet" --indicator
 run "psensor"
 run "nitrogen" --restore
 run "corectrl"
+run "vibrantLinux" --hidden
 run "firefox"

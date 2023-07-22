@@ -29,15 +29,10 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 alias ls='ls -lah --color=auto'
 alias grep='grep --color=auto'
 alias history='history 1'
-# alias pacman-i='sudo pacman -S'
-# alias pacman-u='sudo pacman -Rsn'
-# alias pacman-upg='sudo pacman -Syu'
 alias mudfish='firefox --new-window http://127.0.0.1:8282/ & sudo /opt/mudfish/5.7.3/bin/mudrun'
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias preload-refresh='gopreload-batch-refresh.sh'
-# alias linux-tkg-clone='git clone https://github.com/Frogging-Family/linux-tkg.git'
-
-
+alias makesrcinfo='makepkg --printsrcinfo > .SRCINFO'
 
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
