@@ -9,7 +9,7 @@
     "passthrough": false,
     "gtk-layer-shell": true,
     // Choose the order of the modules
-    "modules-left": ["tray", "wlr/workspaces"],
+    "modules-left": ["tray", "disk", "wlr/workspaces"],
     "modules-center": ["clock", "clock#time"],
     "modules-right": ["pulseaudio", "cpu", "memory", "temperature"],
     "hyprland/window": {
@@ -33,11 +33,12 @@
         "format": "  {:%H:%M}"
     },
     "cpu": {
+        "interval": 1,
         "format": "{usage}%  ",
         "tooltip": false
     },
     "memory": {
-        "format": "{}%  "
+        "format": "{used} / {total}     {swapUsed} / {swapTotal}  " 
     },
     "temperature": {
         "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
@@ -57,4 +58,9 @@
             "default": ["奄", "奔", "墳"]
         },
     },
+    "disk": {
+        "interval": 300,
+        "format": "{free} ",
+        "path": "/"
+    }
 }

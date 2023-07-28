@@ -60,7 +60,7 @@ Waybar is my status bar. Wlogout is my logout screen. Rofi is my application run
 ```
 yay -S xdg-desktop-portal-hyprland hyprland-git waybar-hyprland-git mako-git \
     grim-git hyprpaper-git wl-clipboard-git wl-clip-persist-git nwg-look-bin \
-    swaylock-effects-git wlogout-git rofi-lbonn-wayland-git
+    swaylock-effects-git wlogout-git rofi-lbonn-wayland-git swayidle-git
 ```
 
 ## Installing hyprload
@@ -115,8 +115,8 @@ yay -S ttf-monaco ttf-roboto ttf-ubuntu-font-family ttf-dejavu ttf-hack \
     gnu-free-fonts noto-fonts noto-fonts-emoji ttf-pacifico ttf-ancient-fonts \
     ttf-ubuntu-arabic ttf-freebanglafont ttf-ubraille noto-fonts-cjk ttf-mplus-git \
     ttf-kopubworld ttf-hannom ttf-paratype ttf-google-fonts-git persian-fonts \
-    fonts-tlwg ttf-cm-unicode ttf-liberation  ttf-liberation-mono-nerd
-
+    fonts-tlwg ttf-cm-unicode ttf-liberation ttf-liberation-mono-nerd \
+    ttf-nerd-fonts-symbols
 ```
 
 ### Installing MiBroSoft fonts
