@@ -70,7 +70,7 @@ yay -S r8168-dkms awesome-git picom-git polybar-git wlogout-git rofi \
     wireplumber brave-bin obs-studio-tytan652 lsp-plugins kate pcmanfm-qt \
     breeze breeze-gtk lxappearance-gtk3 nitrogen font-manager scrot meld \
     pkgstats seahorse alacritty zsh-completions ffmpegthumbnailer libinput \
-    freetype2 rng-tools dbus-broker ananicy-cpp cachyos-ananicy-rules-git
+    freetype2 rng-tools dbus-broker irqbalance uksmd-git \
 
 flatpak install flathub com.spotify.Client
 flatpak install flathub com.github.tchx84.Flatseal
@@ -158,6 +158,8 @@ Environment:
 ## Enabling services and timers
 
 ```
+systemctl --user enable pipewire-pulse.service
+sudo systemctl enable uksmd
 sudo systemctl enable sddm.service
 sudo systemctl enable NetworkManager.service
 sudo systemctl enable bluetooth.service
@@ -170,7 +172,7 @@ sudo systemctl enable udisks2.service
 sudo systemctl enable ufw.service
 sudo systemctl enable dbus-broker.service
 sudo systemctl enable rngd.service
-sudo systemctl enable ananicy-cpp.service
+sudo systemctl enable irqbalance.service
 sudo systemctl enable reflector.timer
 sudo systemctl enable paccache.timer
 sudo systemctl enable fstrim.timer

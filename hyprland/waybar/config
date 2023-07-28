@@ -1,17 +1,17 @@
 {
     "layer": "top",
     "position": "bottom", // Waybar position (top|bottom|left|right)
-    "mod": "dock",
-    "height": 24, // Waybar height (to be removed for auto height)
-    "spacing": 4, // Gaps between modules (4px)
+    //"mode": "dock",
+    "height": 28, // Waybar height (to be removed for auto height)
+    "spacing": 0, // Gaps between modules (4px)
     "output": "HDMI-A-2",
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
     // Choose the order of the modules
-    "modules-left": ["tray", "idle_inhibitor", "wlr/workspaces"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["pulseaudio", "pulseaudio#microphone", "cpu", "memory", "temperature", "clock"],
+    "modules-left": ["tray", "wlr/workspaces"],
+    "modules-center": ["clock", "clock#time"],
+    "modules-right": ["pulseaudio", "cpu", "memory", "temperature"],
     "hyprland/window": {
         "max-length": 200,
         "format": "{}",
@@ -21,75 +21,40 @@
         "disable-scroll": true,
         "all-outputs": true,
         "on-click": "activate",
-        "persistent_workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": [],
-            "6": [],
-            "7": [],
-            "8": [],
-            "9": [],
-            "10": []
-        }
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
+        "sort-by-number": true
     },
     "tray": {
-        "icon-size": 18,
         "spacing": 10
     },
     "clock": {
-        "timezone": "Asia/Manila",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": "  {:%a %d %b}"
+    },
+    "clock#time": {
+        "format": "  {:%H:%M}"
     },
     "cpu": {
-        "format": "{usage}% ",
+        "format": "{usage}%  ",
         "tooltip": false
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}%  "
     },
     "temperature": {
         "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "format": "{temperatureC} ",
+        "format": "{temperatureC}  ",
         "interval": "1000",
         "on-click": "psensor"
     },
     "pulseaudio": {
-        "format": "{icon}",
+        "format": "{icon}  {volume}% ",
         "format-muted": "",
+        "ignored-sinks": ["Easy Effects Sink"],
         "on-click": "pavucontrol",
         "on-scroll-up": "~/.config/waybar/scripts/volume --inc",
         "on-scroll-down": "~/.config/waybar/scripts/volume --dec",
         "scroll-step": 2,
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "portable": "",
-            "default": ["", "", ""]
+            "default": ["奄", "奔", "墳"]
         },
-        "tooltip": true,
-        "tooltip-format": "{icon} at {volume}%"
-    },
-    "pulseaudio#microphone": {
-        "format": "{format_source}",
-        "format-source": "",
-        "format-source-muted": "",
-        "on-click": "pavucontrol",
-        "on-scroll-up": "~/.config/waybar/scripts/volume --mic-inc",
-        "on-scroll-down": "~/.config/waybar/scripts/volume --mic-dec",
-        "scroll-step": 2,
-        "tooltip": true,
-        "tooltip-format": " at {volume}%"
     },
 }
-
