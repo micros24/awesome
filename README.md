@@ -1,5 +1,3 @@
-# I'm currently not using Hyprland. It may or may not work.
-
 # Installing CachyOS repositories
 
 ```
@@ -33,22 +31,49 @@ yay --editmenu --nodiffmenu --save
 
 Reboot...
 
-# Installing my awesome configs
-
-## Mandatory packages
-
-Picom is my compositor. Polybar is my status bar. wlogout is my logout screen. rofi is my application runner. xfce4-clipman is my clipboard manager.
+# Mandatory packages
 
 ```
-yay -S xdg-user-dirs xdg-desktop-portal awesome-git picom-git polybar-git \
-    wlogout-git rofi polkit-gnome xfce4-clipman-plugin bluez bluez-utils blueman \
-    network-manager-applet xlockmore-nomotif playerctl pavucontrol scrot \
-    pcmanfm-qt alacritty sddm-git gnome-keyring pamixer
+yay -S xdg-user-dirs xdg-desktop-portal xdg-desktop-portal-gtk polkit-gnome \
+    pavucontrol network-manager-applet bluez bluez-utils blueman sddm-git \
+    gnome-keyring pcmanfm-qt alacritty flatpak file-roller lximage-qt htop \
+    cpupower gopreload-git mpv pacman-contrib reflector ufw mesa timeshift \
+    xf86-video-amdgpu intel-media-driver libva-mesa-driver mesa-vdpau gvfs \
+    vulkan-radeon vulkan-intel seahorse uksmd-git irqbalance r8168-dkms \
+    pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber fastfetch \
+    ananicy-cpp cachyos-ananicy-rules-git
 ```
 
-## Optional packages
+# Installing my AwesomeWM configs
 
-Please change autorun.sh inside the awesome folder to cater if you installed any of the optional packages.
+Picom is my compositor. Polybar is my status bar. Wlogout is my logout screen. Rofi is my application runner. xfce4-clipman is my clipboard manager. Scrot is my screenshot tool. xlockmore is my lockscreen. Nitrogen is what I use to set my wallpaper.
+
+```
+yay -S awesome-git picom-git polybar-git wlogout-git xfce4-clipman-plugin \
+    rofi xlockmore-nomotif playerctl scrot pamixer nitrogen lxappearance-gtk3
+```
+
+# Installing my Hyprland configs
+
+Waybar is my status bar. Wlogout is my logout screen. Rofi is my application runner. wl-clipboard is my clipboard manager. Swaylock is my lockscreen. Grim is my screenshot tool.
+
+```
+yay -S xdg-desktop-portal-hyprland hyprland-git waybar-hyprland-git mako-git \
+    grim-git hyprpaper-git wl-clipboard-git wl-clip-persist-git nwg-look-bin \
+    swaylock-effects-git wlogout-git rofi-lbonn-wayland-git
+```
+
+## Installing hyprload
+
+dependencies: cpio, ninja
+
+```
+curl -sSL https://raw.githubusercontent.com/Duckonaut/hyprload/main/install.sh | bash
+```
+
+Press SUPER + SHIFT + U to update your hyprland plugin loader
+
+# Optional packages
 
 ```
 yay -S corectrl xiccd colord easyeffects psensor
@@ -57,22 +82,14 @@ yay -S corectrl xiccd colord easyeffects psensor
 # My personal installs
 
 ```
-yay -S r8168-dkms awesome-git picom-git polybar-git wlogout-git rofi \
-    polkit-gnome corectrl xiccd colord xfce4-clipman-plugin bluez bluez-utils \
-    blueman psensor easyeffects network-manager-applet kvantum firefox pamixer \
-    flatpak zsh input-remapper-git xlockmore-nomotif playerctl file-roller \
-    bitwarden bleachbit cpupower fastfetch github-cli gopreload-git lximage-qt \
-    htop linux-xanmod-bore linux-xanmod-bore-headers linux-lts mpv \
-    pacman-contrib pavucontrol gimp qt5c reflector timeshift xf86-video-amdgpu \
-    sddm-git util-linux ufw intel-media-driver mesa libva-mesa-driver mesa-vdpau \
-    zsh-theme-powerlevel10k-git gvfs vulkan-radeon vulkan-intel calf \
-    xdg-desktop-portal pipewire pipewire-alsa pipewire-pulse pipewire-jack \
-    wireplumber brave-bin obs-studio-tytan652 lsp-plugins kate pcmanfm-qt \
-    breeze breeze-gtk lxappearance-gtk3 nitrogen font-manager scrot meld \
-    pkgstats seahorse alacritty zsh-completions ffmpegthumbnailer libinput \
-    freetype2 rng-tools dbus-broker irqbalance uksmd-git \
+yay -S kvantum firefox qt5ct util-linux zsh input-remapper-git bitwarden \
+    bleachbit github-cli gimp linux-xanmod-bore linux-xanmod-bore-headers \
+    linux-lts calf meld kate zsh-theme-powerlevel10k-git obs-studio-tytan652 \
+    lsp-plugins font-manager breeze breeze-gtk pkgstats zsh-completions \
+    ffmpegthumbnailer libinput freetype2 rng-tools dbus-broker \
 
 flatpak install flathub com.spotify.Client
+flatpak install flathub com.brave.Browser
 flatpak install flathub com.github.tchx84.Flatseal
 ```
 
@@ -84,6 +101,8 @@ Install mudfish from their website (https://mudfish.net/download)
 yay -S proton-cachyos steam-native-runtime lutris vkbasalt lib32-vkbasalt \
     mangohud wine wine-gecko vulkan-icd-loader lib32-vulkan-icd-loader \
     wine-mono winetricks-git wmctrl obs-vkcapture
+
+flatpak install flathub net.davidotek.pupgui2
 ```
 
 # Themeing
@@ -96,7 +115,7 @@ yay -S ttf-monaco ttf-roboto ttf-ubuntu-font-family ttf-dejavu ttf-hack \
     gnu-free-fonts noto-fonts noto-fonts-emoji ttf-pacifico ttf-ancient-fonts \
     ttf-ubuntu-arabic ttf-freebanglafont ttf-ubraille noto-fonts-cjk ttf-mplus-git \
     ttf-kopubworld ttf-hannom ttf-paratype ttf-google-fonts-git persian-fonts \
-    fonts-tlwg ttf-cm-unicode ttf-liberation
+    fonts-tlwg ttf-cm-unicode ttf-liberation  ttf-liberation-mono-nerd
 
 ```
 
@@ -114,9 +133,9 @@ Set the font of your terminal of choice to MesloLGS NF
 
 - https://github.com/yeyushengfan258/Reversal-icon-theme
 - https://github.com/vinceliuice/Layan-gtk-theme
-- Setup your themes and icons using qt5ct, kvantum, and lxappearance.
+- Setup your themes and icons using qt5ct, kvantum, and lxappearance/nwg-look.
 - Setup your SDDM theme.
-- Setup your wallpaper using nitrogen.
+- Setup your wallpaper using nitrogen if using AwesomeWM. Use hyprpaper if using Hyprland.
 - Setup global font to EB Garamond:size:14.
 
 ## Setup zsh
@@ -167,12 +186,12 @@ sudo systemctl enable colord.service
 sudo systemctl enable cpupower.service
 sudo systemctl enable input-remapper.service
 sudo systemctl enable gopreload.service
-sudo systemctl enable schedtoold.service
 sudo systemctl enable udisks2.service
 sudo systemctl enable ufw.service
 sudo systemctl enable dbus-broker.service
 sudo systemctl enable rngd.service
 sudo systemctl enable irqbalance.service
+sudo systemctl enable ananicy-cpp.service
 sudo systemctl enable reflector.timer
 sudo systemctl enable paccache.timer
 sudo systemctl enable fstrim.timer
