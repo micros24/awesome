@@ -39,9 +39,9 @@ yay -S xdg-user-dirs xdg-desktop-portal xdg-desktop-portal-gtk polkit-gnome \
     gnome-keyring pcmanfm-qt alacritty flatpak file-roller lximage-qt htop \
     cpupower gopreload-git mpv pacman-contrib reflector ufw mesa timeshift \
     xf86-video-amdgpu intel-media-driver libva-mesa-driver mesa-vdpau gvfs \
-    vulkan-radeon vulkan-intel seahorse uksmd-git irqbalance r8168-dkms \
+    vulkan-radeon vulkan-intel seahorse ananicy-cpp irqbalance r8168-dkms \
     pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber fastfetch \
-    ananicy-cpp cachyos-ananicy-rules-git
+    cachyos-ananicy-rules-git
 ```
 
 # Installing my AwesomeWM configs
@@ -86,7 +86,7 @@ yay -S kvantum firefox qt5ct util-linux zsh input-remapper-git bitwarden \
     bleachbit github-cli gimp linux-xanmod-bore linux-xanmod-bore-headers \
     linux-lts calf meld kate zsh-theme-powerlevel10k-git obs-studio-tytan652 \
     lsp-plugins font-manager breeze breeze-gtk pkgstats zsh-completions \
-    ffmpegthumbnailer libinput freetype2 rng-tools dbus-broker \
+    ffmpegthumbnailer libinput freetype2 dbus-broker-git \
 
 flatpak install flathub com.spotify.Client
 flatpak install flathub com.brave.Browser
@@ -178,7 +178,6 @@ Environment:
 
 ```
 systemctl --user enable pipewire-pulse.service
-sudo systemctl enable uksmd
 sudo systemctl enable sddm.service
 sudo systemctl enable NetworkManager.service
 sudo systemctl enable bluetooth.service
@@ -189,7 +188,6 @@ sudo systemctl enable gopreload.service
 sudo systemctl enable udisks2.service
 sudo systemctl enable ufw.service
 sudo systemctl enable dbus-broker.service
-sudo systemctl enable rngd.service
 sudo systemctl enable irqbalance.service
 sudo systemctl enable ananicy-cpp.service
 sudo systemctl enable reflector.timer
