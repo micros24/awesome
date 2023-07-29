@@ -76,7 +76,7 @@ window#waybar.hidden {
 #tray {
     padding-left: 8px;
     padding-right: 8px;
-    margin-right: 4px;
+    margin-right: 8px;
     border-radius: 0px 8px 0px 0px;
     transition: none;
     color: #ffffff;
@@ -96,7 +96,7 @@ window#waybar.hidden {
 #pulseaudio {
     padding-left: 8px;
     padding-right: 8px;
-    margin-right: 4px;
+    margin-right: 8px;
     border-radius: 8px 8px 0px 0px;
     transition: none;
     color: #ffffff;
@@ -106,7 +106,7 @@ window#waybar.hidden {
 #cpu {
     padding-left: 8px;
     padding-right: 12px;
-    margin-right: 4px;
+    margin-right: 8px;
     border-radius: 8px 8px 0px 0px;
     transition: none;
     color: #ffffff;
@@ -121,7 +121,7 @@ window#waybar.hidden {
 #memory {
     padding-left: 8px;
     padding-right: 8px;
-    margin-right: 4px;
+    margin-right: 8px;
     border-radius: 8px 8px 0px 0px;
     transition: none;
     color: #ffffff;
@@ -140,7 +140,7 @@ window#waybar.hidden {
 #disk {
     padding-left: 8px;
     padding-right: 8px;
-    margin-right: 4px;
+    margin-right: 8px;
     border-radius: 8px 8px 0px 0px;
     transition: none;
     color: #ffffff;
