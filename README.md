@@ -1,3 +1,5 @@
+# I am currently using Hyprland. My AwesomeWM configs may not be updated and may not work.
+
 # Installing CachyOS repositories
 
 ```
@@ -55,12 +57,12 @@ yay -S awesome-git picom-git polybar-git wlogout-git xfce4-clipman-plugin \
 
 # Installing my Hyprland configs
 
-Waybar is my status bar. Wlogout is my logout screen. Rofi is my application runner. wl-clipboard is my clipboard manager. Swaylock is my lockscreen. Grim is my screenshot tool.
+Waybar is my status bar. Wleave is my logout screen. Rofi is my application runner. wl-clipboard is my clipboard manager. Swaylock is my lockscreen. Grim is my screenshot tool.
 
 ```
 yay -S xdg-desktop-portal-hyprland hyprland-git waybar-hyprland-git mako-git \
     grim-git hyprpaper-git wl-clipboard-git wl-clip-persist-git nwg-look-bin \
-    swaylock-effects-git wlogout-git rofi-lbonn-wayland-git swayidle-git
+    swaylock-effects-git wleave-git rofi-lbonn-wayland-git swayidle-git
 ```
 
 ## Installing hyprload

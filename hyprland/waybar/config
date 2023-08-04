@@ -9,9 +9,9 @@
     "passthrough": false,
     "gtk-layer-shell": true,
     // Choose the order of the modules
-    "modules-left": ["tray", "disk", "wlr/workspaces"],
+    "modules-left": ["tray", "idle_inhibitor", "disk", "wlr/workspaces"],
     "modules-center": ["clock", "clock#time"],
-    "modules-right": ["pulseaudio", "cpu", "memory", "temperature"],
+    "modules-right": ["custom/kernel", "pulseaudio", "cpu", "memory"],
     "hyprland/window": {
         "max-length": 200,
         "format": "{}",
@@ -40,12 +40,12 @@
     "memory": {
         "format": "{used} / {total}     {swapUsed} / {swapTotal}  " 
     },
-    "temperature": {
-        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "format": "{temperatureC}  ",
-        "interval": "1000",
-        "on-click": "psensor"
-    },
+    // "temperature": {
+    //     "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    //     "format": "{temperatureC}  ",
+    //     "interval": "1000",
+    //     "on-click": "psensor"
+    // },
     "pulseaudio": {
         "format": "{icon}  {volume}% ",
         "format-muted": "",
@@ -62,5 +62,17 @@
         "interval": 300,
         "format": "{free} ",
         "path": "/"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "custom/kernel": {
+        "exec": "uname -r",
+        "interval": "once",
+        "format": "{}"
     }
 }

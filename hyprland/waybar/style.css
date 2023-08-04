@@ -86,7 +86,7 @@ window#waybar.hidden {
 #idle_inhibitor{
     padding-left: 8px;
     padding-right: 8px;
-    margin-right: 4px;
+    margin-right: 8px;
     border-radius: 8px 8px 0px 0px;
     transition: none;
     color: #ffffff;
@@ -121,8 +121,8 @@ window#waybar.hidden {
 #memory {
     padding-left: 8px;
     padding-right: 8px;
-    margin-right: 8px;
-    border-radius: 8px 8px 0px 0px;
+    margin-right: 0px;
+    border-radius: 8px 0px 0px 0px;
     transition: none;
     color: #ffffff;
     background: #383c4a;
@@ -138,6 +138,16 @@ window#waybar.hidden {
 }
 
 #disk {
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-right: 8px;
+    border-radius: 8px 8px 0px 0px;
+    transition: none;
+    color: #ffffff;
+    background: #383c4a;
+}
+
+#custom-kernel {
     padding-left: 8px;
     padding-right: 8px;
     margin-right: 8px;
