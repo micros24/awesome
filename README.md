@@ -1,4 +1,9 @@
-# I am currently using Hyprland. My AwesomeWM configs may not be updated and may not work.
+# I am currently using AwesomeWM. My Hyprland configs may not be updated and may not work.
+
+The usage of Wayland adds latency to user input. I noticed this added latency
+in which I have decided to go back to AwesomeWM. Until Wayland implements
+color correction and allowing tearing when running fullscreen games, I will
+stay on X11.
 
 # Installing CachyOS repositories
 
@@ -48,10 +53,10 @@ yay -S xdg-user-dirs xdg-desktop-portal xdg-desktop-portal-gtk polkit-gnome \
 
 # Installing my AwesomeWM configs
 
-Picom is my compositor. Polybar is my status bar. Wlogout is my logout screen. Rofi is my application runner. xfce4-clipman is my clipboard manager. Scrot is my screenshot tool. xlockmore is my lockscreen. Nitrogen is what I use to set my wallpaper.
+Picom is my compositor. Polybar is my status bar. Wleave is my logout screen. Rofi is my application runner. xfce4-clipman is my clipboard manager. Scrot is my screenshot tool. xlockmore is my lockscreen. Nitrogen is what I use to set my wallpaper.
 
 ```
-yay -S awesome-git picom-git polybar-git wlogout-git xfce4-clipman-plugin \
+yay -S awesome-git picom-git polybar-git wleave-git xfce4-clipman-plugin \
     rofi xlockmore-nomotif playerctl scrot pamixer nitrogen lxappearance-gtk3
 ```
 
@@ -224,6 +229,6 @@ https://gitlab.com/corectrl/corectrl/-/wikis/Setup
 
 ## Setup preload
 
-```
-gopreload-prepare program
-```
+> gopreload-prepare _program_
+> gopreload-prepare kate
+> gopreload-prepare alacritty

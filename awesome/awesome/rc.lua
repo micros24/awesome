@@ -109,7 +109,7 @@ globalkeys = gears.table.join(
             awful.spawn("input-remapper-gtk") end,
         {description = "input remapper", group = "client"}),
     awful.key({ "Control", "Mod1" }, "Delete", function () 
-            awful.spawn("wlogout") end,
+            awful.spawn("wleave") end,
         {description = "logout screen", group = "client"}),
     awful.key({ modkey, }, "m", function () 
             awful.spawn("easyeffects") end,

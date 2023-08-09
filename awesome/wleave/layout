@@ -1,36 +1,41 @@
 {
     "label" : "logout",
     "action" : "pkill -SIGKILL -u micro",
+    "keybind": "",
     "text" : "Logout"
-}
-
-{
-    "label" : "lock",
-    "action" : "xlock -dpmsoff 60",
-    "text" : "Lock"
 }
 
 {
     "label" : "reboot",
     "action" : "systemctl reboot",
+    "keybind": "",
     "text" : "Reboot"
+}
+
+{
+    "label" : "lock",
+    "action" : "xlock -dpmsoff 60",
+    "keybind": "",
+    "text" : "Lock"
 }
 
 {
     "label" : "hibernate",
     "action" : "",
+    "keybind": "",
     "text" : "Hibernate"
 }
 
 {
     "label" : "shutdown",
     "action" : "systemctl poweroff",
+    "keybind": "",
     "text" : "Shutdown"
 }
-
 
 {
     "label" : "suspend",
     "action" : "",
+    "keybind": "",
     "text" : "Suspend"
 }
