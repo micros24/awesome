@@ -4,11 +4,3 @@
 # Syntax: simple "KEY=VAL" pairs on separate lines
 #
 LD_BIND_NOW=1
-# MOZ_ENABLE_WAYLAND=1
-MOZ_DRM_DEVICE=/dev/dri/card1
-XCURSOR_SIZE=24
-XCURSOR_THEME=breeze_cursors
-QT_STYLE_OVERRIDE=kvantum
-XDG_CURRENT_DESKTOP=awesome
-QT_QPA_PLATFORMTHEME=qt5ct
-__GL_THREADED_OPTIMIZATIONS=1

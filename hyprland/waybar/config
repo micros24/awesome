@@ -9,7 +9,7 @@
     "passthrough": false,
     "gtk-layer-shell": true,
     // Choose the order of the modules
-    "modules-left": ["tray", "idle_inhibitor", "disk", "wlr/workspaces"],
+    "modules-left": ["tray", "idle_inhibitor", "disk", "hyprland/workspaces"],
     "modules-center": ["clock", "clock#time"],
     "modules-right": ["custom/kernel", "pulseaudio", "cpu", "memory"],
     "hyprland/window": {
@@ -17,11 +17,11 @@
         "format": "{}",
         "separate-outputs": true
     },
-    "wlr/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
+    "hyprland/workspaces": {
+        "disable-scroll": "true",
+        "all-outputs": "false",
         "on-click": "activate",
-        "sort-by-number": true
+        "sort-by-number": "true"
     },
     "tray": {
         "spacing": 10

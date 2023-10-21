@@ -9,7 +9,7 @@ run() {
 run "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 run "dbus-update-activation-environment" --systemd XDG_CURRENT_DESKTOP
 run "pcmanfm-qt" -d
-run "picom" -bc
+run "picom" -b
 run "blueman-applet"
 run "xiccd"
 run "xfce4-clipman"
@@ -18,4 +18,4 @@ run "nm-applet" --indicator
 run "psensor"
 run "nitrogen" --restore
 run "corectrl"
-run "cachy-browser"
+# run "cachy-browser"

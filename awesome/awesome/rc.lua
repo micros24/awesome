@@ -82,52 +82,43 @@ end
 globalkeys = gears.table.join(
     -- Custom bindings
     awful.key({ "Mod1", }, "Tab", function ()
-            awful.client.focus.byidx(1)end,
-        {description = "focus next by index", group = "client"}),
+            awful.client.focus.byidx(1) end),
+    awful.key({ modkey, }, "c", function () 
+            awful.spawn.with_shell("DRI_PRIME=1 LIBVA_DRIVER_NAME=i965 cachy-browser") end),
     awful.key({ modkey, }, "f", function () 
-            awful.spawn("firefox") end,
-        {description = "open a browser", group = "client"}),
+            awful.spawn.with_shell("DRI_PRIME=1 LIBVA_DRIVER_NAME=i965 firefox") end),
+    awful.key({ modkey, }, "b", function () 
+            awful.spawn.with_shell("DRI_PRIME=1 LIBVA_DRIVER_NAME=i965 brave") end),
     awful.key({ "Control", "Mod1"}, "s", function () 
-            awful.spawn("steam-native") end,
+            awful.spawn.with_shell("steam-native -silent") end),
+    awful.key({ "Control", "Mod1"}, "a", function () 
+            awful.spawn("awakened-poe-trade") end,
         {description = "open a browser", group = "client"}),
     awful.key({ modkey, }, "s", function () 
-            awful.spawn("flatpak run com.spotify.Client") end,
-        {description = "open spotify", group = "client"}),
+            awful.spawn("flatpak run com.spotify.Client") end),
     awful.key({ modkey, }, "e", function () 
-            awful.spawn("pcmanfm-qt") end,
-        {description = "open file manager", group = "client"}),
+            awful.spawn("pcmanfm-qt") end),
     awful.key({ modkey, }, "r", function () 
-            awful.spawn("rofi -show drun") end,
-        {description = "show runner", group = "client"}),
+            awful.spawn("rofi -show drun") end),
     awful.key({ modkey, }, "g", function () 
-            awful.spawn("kate /home/micro/GW2") end,
-        {description = "open GW2 daily list", group = "client"}),
+            awful.spawn("kate /home/micro/GW2") end),
     awful.key({ modkey, }, "Return", function () 
-            awful.spawn(terminal) end,
-        {description = "open a terminal", group = "client"}),
-    awful.key({ modkey, }, "a", function () 
-            awful.spawn("input-remapper-gtk") end,
-        {description = "input remapper", group = "client"}),
+            awful.spawn(terminal) end),
+--    awful.key({ modkey, }, "a", function () 
+--            awful.spawn("input-remapper-gtk") end),
     awful.key({ "Control", "Mod1" }, "Delete", function () 
-            awful.spawn("wleave") end,
-        {description = "logout screen", group = "client"}),
+            awful.spawn("wleave") end),
     awful.key({ modkey, }, "m", function () 
-            awful.spawn("easyeffects") end,
-        {description = "easy effects", group = "client"}),
+            awful.spawn("easyeffects") end),
     awful.key({ modkey, }, "l", function () 
-            awful.spawn("xlock -dpmsoff 60") end,
-        {description = "lock screen", group = "client"}),
+            awful.spawn("xlock -dpmsoff 60") end),
     awful.key({ modkey, }, "j", function () 
-            awful.screen.focus_relative(1) end,
-        {description = "focus the next screen", group = "screen"}),
-    awful.key({ modkey, }, "q",   awful.tag.viewprev,
-        {description = "view previous", group = "tag"}),
-    awful.key({ modkey, }, "Tab",  awful.tag.viewnext,
-        {description = "view next", group = "tag"}),
+            awful.screen.focus_relative(1) end),
+    awful.key({ modkey, }, "q",   awful.tag.viewprev),
+    awful.key({ modkey, }, "Tab",  awful.tag.viewnext),
         
     -- Screenshot bindings
-     awful.key({ modkey, }, "Print", scrot_window,
-        {description = "screenshot active window", group = "client"}),
+     awful.key({ modkey, }, "Print", scrot_window),
         
     -- Media bindings
     awful.key({ "", }, "XF86AudioRaiseVolume", function () 
@@ -179,7 +170,7 @@ clientkeys = gears.table.join(
     awful.key({ modkey, "Control" }, "t", function (c) 
             awful.titlebar.toggle(c) end,
         {description = "Show/Hide Titlebars", group="client"}),
-    awful.key({ "Control", "Mod1"}, "m",
+    awful.key({ "Control", modkey}, "m",
             function (c)
                 c.maximized = not c.maximized
                 c:raise()
@@ -288,16 +279,25 @@ awful.rules.rules = {
         properties = { opacity = 0.9 }},
     { rule = { name = "Spotify"},
         properties = { tag = screen[2].tags[9], switch_to_tags = true }},
+    { rule_any = 
+        { class = {
+            "brave-browser", 
+            "Brave-browser"
+        }},
+        properties = { tag = screen[2].tags[1], switch_to_tags = true }},
     {rule = { class = "Psensor" },
         properties = { 
-        	ontop = true,
         	floating = true,
+        	ontop = false,
         	placement = awful.placement.centered,
-        	width     = 800,
-        	height    = 550,
+        	width     = 600,
+        	height    = 700,
+        	tag = screen[2].tags[1], 
+        	switch_to_tags = true,
     }}, 
     { rule_any = { class = {"easyeffects"}},
         properties = { 
+            ontop = true,
         	floating = true,
         	placement = awful.placement.centered,
         	width = 1536,
@@ -336,6 +336,7 @@ awful.rules.rules = {
           "veromix",
           "xtightvncviewer",
           "File-roller",
+          "mpv",
           "Input-remapper-gtk"},
 
         -- Note that the name property shown in xprop might be set slightly after creation of the client
@@ -356,6 +357,7 @@ awful.rules.rules = {
         }
       }, properties = { 
         floating = true,
+        ontop = true,
         placement = awful.placement.centered,
         width     = 1024,
         height    = 768,

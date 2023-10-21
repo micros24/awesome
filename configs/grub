@@ -3,7 +3,7 @@
 GRUB_DEFAULT=saved
 GRUB_TIMEOUT=1
 GRUB_DISTRIBUTOR="Arch"
-GRUB_CMDLINE_LINUX_DEFAULT="quiet loglevel=3 nowatchdog modprobe.blacklist=iTCO_wdt rd.udev.log_level=3 systemd.show_status=auto lpj=2496000 raid=noautodetect rootfstype=ext4 page_alloc.shuffle=1 amdgpu.ppfeaturemask=0xffffffff intel_pstate=passive split_lock_detect=off pci=pcie_bus_perf"
+GRUB_CMDLINE_LINUX_DEFAULT="quiet loglevel=3 rd.udev.log_level=3 modprobe.blacklist=iTCO_wdt lpj=2496000 systemd.show_status=auto raid=noautodetect rootfstype=ext4 page_alloc.shuffle=1 amdgpu.ppfeaturemask=0xffffffff intel_pstate=passive pci=pcie_bus_perf split_lock_detect=off audit=0"
 GRUB_CMDLINE_LINUX="tsc=reliable clocksource=tsc"
 
 # Preload both GPT and MBR modules so that they are not missed

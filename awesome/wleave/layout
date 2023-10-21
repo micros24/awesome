@@ -13,6 +13,13 @@
 }
 
 {
+    "label" : "shutdown",
+    "action" : "systemctl poweroff",
+    "keybind": "",
+    "text" : "Shutdown"
+}
+
+{
     "label" : "lock",
     "action" : "xlock -dpmsoff 60",
     "keybind": "",
@@ -24,13 +31,6 @@
     "action" : "",
     "keybind": "",
     "text" : "Hibernate"
-}
-
-{
-    "label" : "shutdown",
-    "action" : "systemctl poweroff",
-    "keybind": "",
-    "text" : "Shutdown"
 }
 
 {

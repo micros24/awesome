@@ -1,10 +1,3 @@
-# I am currently using AwesomeWM. My Hyprland configs may not be updated and may not work.
-
-The usage of Wayland adds latency to user input. I noticed this added latency
-in which I have decided to go back to AwesomeWM. Until Wayland implements
-color correction and allowing tearing when running fullscreen games, I will
-stay on X11.
-
 # Installing CachyOS repositories
 
 ```
@@ -65,7 +58,7 @@ yay -S awesome-git picom-git polybar-git wleave-git xfce4-clipman-plugin \
 Waybar is my status bar. Wleave is my logout screen. Rofi is my application runner. wl-clipboard is my clipboard manager. Swaylock is my lockscreen. Grim is my screenshot tool.
 
 ```
-yay -S xdg-desktop-portal-hyprland hyprland-git waybar-hyprland-git mako-git \
+yay -S xdg-desktop-portal-hyprland-git hyprland-git waybar-hyprland mako \
     grim-git hyprpaper-git wl-clipboard-git wl-clip-persist-git nwg-look-bin \
     swaylock-effects-git wleave-git rofi-lbonn-wayland-git swayidle-git
 ```
