@@ -1,4 +1,21 @@
-# Octtober 21, 2023
+# November 8, 2023
+
+- Added note on Hyprland in README.md.
+- Added a new section: Set-up monitor EDID.
+- Added evdev config as driver for mouse inputs.
+- Updated grub configuration...
+  - Added threadirqs.
+  - Added drm.edid_firmware=HDMI-A-1:edid/edid2.bin.
+  - Removed blacklisting of watchdogs.
+  - Removed raid=noautodetect.
+  - Removed rootfstype=ext4.
+  - Removed split_lock_detect=off.
+  - Removed audit=0.
+- Replaced rofi with rofi-lbonn-wayland-git.
+- Replaced waybar-hyprland with waybar-git.
+- Removed input-remapper-git.
+
+# October 21, 2023
 
 - Removed note on Hyprland as tearing have been implemented.
 - Removed override-redirect from Polybar.

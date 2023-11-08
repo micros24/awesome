@@ -1,3 +1,7 @@
+# I'm not actively using Hyprland...
+
+Hyprland has implemented tearing. However, the tearing implementation makes it so that you use a software cursor. This means that when your game is lagging, the cursor on your screen will only update equal to your fps. It is not independent of your mouse movement. For example, when your game is lagging at 2 fps, the cursor on your screen will only move twice every second. Its placement is determined on how you moved your mouse physically. Another example: If your game is lagging at 0 fps (loading screen, long lag spikes), your cursor on screen will not move, even if you moved your mouse physically. This may not be a significant impact on your gaming preferences, but I like my cursor where I move my mouse and when I move my mouse.
+
 # Installing CachyOS repositories
 
 ```
@@ -50,7 +54,7 @@ Picom is my compositor. Polybar is my status bar. Wleave is my logout screen. Ro
 
 ```
 yay -S awesome-git picom-git polybar-git wleave-git xfce4-clipman-plugin \
-    rofi xlockmore-nomotif playerctl scrot pamixer nitrogen lxappearance-gtk3
+    rofi-lbonn-wayland-git xlockmore-nomotif playerctl scrot pamixer nitrogen lxappearance-gtk3
 ```
 
 # Installing my Hyprland configs
@@ -58,7 +62,7 @@ yay -S awesome-git picom-git polybar-git wleave-git xfce4-clipman-plugin \
 Waybar is my status bar. Wleave is my logout screen. Rofi is my application runner. wl-clipboard is my clipboard manager. Swaylock is my lockscreen. Grim is my screenshot tool.
 
 ```
-yay -S xdg-desktop-portal-hyprland-git hyprland-git waybar-hyprland mako \
+yay -S xdg-desktop-portal-hyprland-git hyprland-git waybar-git mako \
     grim-git hyprpaper-git wl-clipboard-git wl-clip-persist-git nwg-look-bin \
     swaylock-effects-git wleave-git rofi-lbonn-wayland-git swayidle-git
 ```
@@ -82,8 +86,8 @@ yay -S corectrl xiccd colord easyeffects psensor
 # My personal installs
 
 ```
-yay -S kvantum firefox qt5ct util-linux zsh input-remapper-git bitwarden \
-    bleachbit github-cli gimp linux-xanmod-bore linux-xanmod-bore-headers \
+yay -S kvantum firefox qt5ct util-linux zsh bitwarden bleachbit \
+    github-cli gimp linux-xanmod-bore linux-xanmod-bore-headers \
     linux-lts calf meld kate zsh-theme-powerlevel10k-git obs-studio-tytan652 \
     lsp-plugins font-manager breeze breeze-gtk pkgstats zsh-completions \
     ffmpegthumbnailer libinput freetype2 dbus-broker-git \
@@ -214,6 +218,12 @@ colormgr get-profiles
 colormgr device-add-profile device_id profile_id
 colormgr device-make-profile-default device_id profile_id
 cat /etc/xdg/autostart/xiccd.desktop
+```
+
+## Set-up monitor EDID
+
+```
+cp edid2.bin /usr/lib/firmware/edid/
 ```
 
 ## Set-up CoreCtrl
