@@ -1,3 +1,23 @@
+# January 12, 2024
+
+- Theme installation
+  - Added Layan-kde for Kvantum.
+  - Added tide for fish users.
+- Added new category Performance Optimizations
+  - Added profile-sync-daemon.
+  - Added zram-generator.
+  - Added Arch Linux Optimization Guide.
+  - Added CachyOs tweaks.
+  - Added ArchWiki Gaming.
+- Added swappy to hyprland.
+- Added CREDITS.md.
+- Updated hyprland.conf.
+- Updated grub.
+- Updated window-rules.conf.
+- Replaced rofi-lbonn-wayland-git with wofi if using Hyrpland.
+- Removed imput-remapper.service.
+- Removed colord.service.
+
 # November 8, 2023
 
 - Added note on Hyprland in README.md.

@@ -43,7 +43,7 @@ yay -S xdg-user-dirs xdg-desktop-portal xdg-desktop-portal-gtk polkit-gnome \
     gnome-keyring pcmanfm-qt alacritty flatpak file-roller lximage-qt htop \
     cpupower gopreload-git mpv pacman-contrib reflector ufw mesa timeshift \
     xf86-video-amdgpu intel-media-driver libva-mesa-driver mesa-vdpau gvfs \
-    vulkan-radeon vulkan-intel seahorse ananicy-cpp irqbalance r8168-dkms \
+    vulkan-radeon vulkan-intel seahorse ananicy-cpp-git irqbalance r8168-dkms \
     pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber fastfetch \
     cachyos-ananicy-rules-git
 ```
@@ -63,8 +63,8 @@ Waybar is my status bar. Wleave is my logout screen. Rofi is my application runn
 
 ```
 yay -S xdg-desktop-portal-hyprland-git hyprland-git waybar-git mako \
-    grim-git hyprpaper-git wl-clipboard-git wl-clip-persist-git nwg-look-bin \
-    swaylock-effects-git wleave-git rofi-lbonn-wayland-git swayidle-git
+    grim-git hyprpaper-git wl-clipboard wl-clip-persist nwg-look-bin \
+    swaylock-effects-git wleave-git wofi swayidle-git swappy
 ```
 
 ## Installing hyprload
@@ -135,9 +135,11 @@ Set the font of your terminal of choice to MesloLGS NF
 
 ## Theme installation
 
-- https://github.com/yeyushengfan258/Reversal-icon-theme
-- https://github.com/vinceliuice/Layan-gtk-theme
-- Setup your themes and icons using qt5ct, kvantum, and lxappearance/nwg-look.
+- [Reversal icon theme](https://github.com/yeyushengfan258/Reversal-icon-theme)
+- [Layan-GTK-theme](https://github.com/vinceliuice/Layan-gtk-theme)
+- [Layan-KDE](https://github.com/vinceliuice/Layan-kde) for Kvantum.
+- Add [tide](https://github.com/IlanCosman/tide) if you're using fish.
+- Setup your themes and icons using qt5ct, kvantum, and nwg-look.
 - Setup your SDDM theme.
 - Setup your wallpaper using nitrogen if using AwesomeWM. Use hyprpaper if using Hyprland.
 - Setup global font to EB Garamond:size:14.
@@ -178,6 +180,15 @@ Environment:
 
 # Essential configurations
 
+## Performance Optimizations
+
+- [profile-sync-daemon](https://wiki.archlinux.org/title/Profile-sync-daemon) puts your browser's profile into memory so it would decrease I/O operations in your disks.
+- [zram-generator](https://wiki.archlinux.org/title/Zram)
+- [Arch Linux Optimization Guide](ventureo.codeberg.page/) Translate to english if you can't read Russian.
+- CachyOs [Post-install steps](https://wiki.cachyos.org/first_steps/first-steps/)
+- CachyOs [General System Tweaks](https://wiki.cachyos.org/general_info/general_system_tweaks/)
+- ArchWiki [Gaming](https://wiki.archlinux.org/title/Gaming#Improving_performance)
+
 ## Enabling services and timers
 
 ```
@@ -185,9 +196,7 @@ systemctl --user enable pipewire-pulse.service
 sudo systemctl enable sddm.service
 sudo systemctl enable NetworkManager.service
 sudo systemctl enable bluetooth.service
-sudo systemctl enable colord.service
 sudo systemctl enable cpupower.service
-sudo systemctl enable input-remapper.service
 sudo systemctl enable gopreload.service
 sudo systemctl enable udisks2.service
 sudo systemctl enable ufw.service
