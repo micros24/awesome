@@ -33,19 +33,18 @@ yay -Y --devel --save
 yay --editmenu --nodiffmenu --save
 ```
 
-Reboot...
-
 # Mandatory packages
 
 ```
 yay -S xdg-user-dirs xdg-desktop-portal xdg-desktop-portal-gtk polkit-gnome \
     pavucontrol network-manager-applet bluez bluez-utils blueman sddm-git \
-    gnome-keyring pcmanfm-qt alacritty flatpak file-roller lximage-qt htop \
+    pcmanfm-qt alacritty flatpak file-roller lximage-qt htop \
     cpupower gopreload-git mpv pacman-contrib reflector ufw mesa timeshift \
-    xf86-video-amdgpu intel-media-driver libva-mesa-driver mesa-vdpau gvfs \
-    vulkan-radeon vulkan-intel seahorse ananicy-cpp irqbalance r8168-dkms \
-    pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber fastfetch \
-    cachyos-ananicy-rules-git
+    intel-media-driver libva-mesa-driver lib32-libva-mesa-driver gvfs \
+    mesa-vdpau lib32-mesa-vdpau vulkan-radeon lib32-vulkan-radeon \
+    vulkan-intel lib32-vulkan-intel ananicy-cpp-git irqbalance r8168-dkms \
+    pipewire lib32-pipewire pipewire-alsa pipewire-pulse pipewire-jack \
+    wireplumber fastfetch cachyos-ananicy-rules-git cachy-browser
 ```
 
 # Installing my AwesomeWM configs
@@ -54,7 +53,8 @@ Picom is my compositor. Polybar is my status bar. Wleave is my logout screen. Ro
 
 ```
 yay -S awesome-git picom-git polybar-git wleave-git xfce4-clipman-plugin \
-    rofi-lbonn-wayland-git xlockmore-nomotif playerctl scrot pamixer nitrogen lxappearance-gtk3
+    rofi-lbonn-wayland-git xlockmore-nomotif playerctl scrot pamixer nitrogen \
+    xf86-video-amdgpu lxappearance-gtk3
 ```
 
 # Installing my Hyprland configs
@@ -63,8 +63,9 @@ Waybar is my status bar. Wleave is my logout screen. Rofi is my application runn
 
 ```
 yay -S xdg-desktop-portal-hyprland-git hyprland-git waybar-git mako \
-    grim-git hyprpaper-git wl-clipboard-git wl-clip-persist-git nwg-look-bin \
-    swaylock-effects-git wleave-git rofi-lbonn-wayland-git swayidle-git
+    grim-git hyprpaper-git wl-clipboard wl-clip-persist nwg-look-bin \
+    swaylock-effects-git wleave-git wofi swayidle-git swappy grimblast-git \
+    pamixer
 ```
 
 ## Installing hyprload
@@ -77,36 +78,28 @@ curl -sSL https://raw.githubusercontent.com/Duckonaut/hyprload/main/install.sh |
 
 Press SUPER + SHIFT + U to update your hyprland plugin loader
 
-# Optional packages
-
-```
-yay -S corectrl xiccd colord easyeffects psensor
-```
-
 # My personal installs
 
 ```
-yay -S kvantum firefox qt5ct util-linux zsh bitwarden bleachbit \
-    github-cli gimp linux-xanmod-bore linux-xanmod-bore-headers \
-    linux-lts calf meld kate zsh-theme-powerlevel10k-git obs-studio-tytan652 \
-    lsp-plugins font-manager breeze breeze-gtk pkgstats zsh-completions \
-    ffmpegthumbnailer libinput freetype2 dbus-broker-git \
+yay -S kvantum firefox qt5ct util-linux bitwarden bleachbit kate fish \
+    github-cli gimp linux-xanmod-bore linux-xanmod-bore-headers calf meld \
+    linux-lts obs-studio-tytan652 lsp-plugins breeze breeze-gtk pkgstats \
+    ffmpegthumbnailer libinput dbus-broker easyeffects psensor corectrl \
+    kdenlive obs-vkcapture lib32-obs-vkcapture obs-pipewire-audio-capture \
+    brave-bin libreoffice-still opencl-clover-mesa lib32-opencl-clover-mesa \
+    rocm-opencl-runtime:
 
 flatpak install flathub com.spotify.Client
-flatpak install flathub com.brave.Browser
 flatpak install flathub com.github.tchx84.Flatseal
 ```
 
-## Setting up games
+# Setting up gaming
 
-Install mudfish from their website (https://mudfish.net/download)
+Install [Mudfish VPN](https://mudfish.net/download) from their website.
+Install packages from [cachyos-gaming-meta](https://github.com/CachyOS/CachyOS-PKGBUILDS/blob/master/cachyos-gaming-meta/PKGBUILD).
 
 ```
-yay -S proton-cachyos steam-native-runtime lutris vkbasalt lib32-vkbasalt \
-    mangohud wine wine-gecko vulkan-icd-loader lib32-vulkan-icd-loader \
-    wine-mono winetricks-git wmctrl obs-vkcapture
-
-flatpak install flathub net.davidotek.pupgui2
+yay -S --needed vkbasalt lib32-vkbasalt wmctrl protonup-qt
 ```
 
 # Themeing
@@ -114,13 +107,12 @@ flatpak install flathub net.davidotek.pupgui2
 ## Fonts
 
 ```
-yay -S ttf-monaco ttf-roboto ttf-ubuntu-font-family ttf-dejavu ttf-hack \
-    ttf-meslo-nerd-font-powerlevel10k ttf-font-awesome ttf-ebgaramond \
-    gnu-free-fonts noto-fonts noto-fonts-emoji ttf-pacifico ttf-ancient-fonts \
-    ttf-ubuntu-arabic ttf-freebanglafont ttf-ubraille noto-fonts-cjk ttf-mplus-git \
-    ttf-kopubworld ttf-hannom ttf-paratype ttf-google-fonts-git persian-fonts \
-    fonts-tlwg ttf-cm-unicode ttf-liberation ttf-liberation-mono-nerd \
-    ttf-nerd-fonts-symbols
+yay -S ttf-hack ttf-meslo-nerd-font-powerlevel10k ttf-font-awesome \
+    ttf-ebgaramond gnu-free-fonts noto-fonts noto-fonts-emoji noto-fonts-cjk \
+    ttf-liberation adobe-source-han-sans-cn-fonts adobe-source-han-sans-jp-fonts \
+    adobe-source-han-sans-kr-fonts noto-color-emoji-fontconfig freetype2 ttf-dejavu \
+    awesome-terminal-fonts cantarell-fonts opendesktop-fonts ttf-bitstream-vera \
+    ttf-opensans ttf-meslo-nerd noto-fonts-cjk
 ```
 
 ### Installing MiBroSoft fonts
@@ -135,23 +127,27 @@ Set the font of your terminal of choice to MesloLGS NF
 
 ## Theme installation
 
-- https://github.com/yeyushengfan258/Reversal-icon-theme
-- https://github.com/vinceliuice/Layan-gtk-theme
-- Setup your themes and icons using qt5ct, kvantum, and lxappearance/nwg-look.
+- [Reversal icon theme](https://github.com/yeyushengfan258/Reversal-icon-theme)
+- [Layan-GTK-theme](https://github.com/vinceliuice/Layan-gtk-theme)
+- [Layan-KDE](https://github.com/vinceliuice/Layan-kde) for Kvantum.
+- Setup your themes and icons using qt5ct, kvantum, and nwg-look.
 - Setup your SDDM theme.
 - Setup your wallpaper using nitrogen if using AwesomeWM. Use hyprpaper if using Hyprland.
 - Setup global font to EB Garamond:size:14.
 
-## Setup zsh
+## Setup fish
+
+- Add [tide](https://github.com/IlanCosman/tide) if you're using fish.
 
 ```
-chsh -s /usr/bin/zsh
+yay -S cachyos-fish-config
+chsh -s /usr/bin/fish
 ```
 
-Logout and log back in then check your default shell with `echo $SHELL`, then...
+Logout and log back in then check your default shell with `echo $SHELL`, then install tide...
 
 ```
-p10k configure
+fisher install IlanCosman/tide@v6
 ```
 
 ## Setup flatpak themes
@@ -178,26 +174,15 @@ Environment:
 
 # Essential configurations
 
-## Enabling services and timers
+## Performance Optimizations
 
-```
-systemctl --user enable pipewire-pulse.service
-sudo systemctl enable sddm.service
-sudo systemctl enable NetworkManager.service
-sudo systemctl enable bluetooth.service
-sudo systemctl enable colord.service
-sudo systemctl enable cpupower.service
-sudo systemctl enable input-remapper.service
-sudo systemctl enable gopreload.service
-sudo systemctl enable udisks2.service
-sudo systemctl enable ufw.service
-sudo systemctl enable dbus-broker.service
-sudo systemctl enable irqbalance.service
-sudo systemctl enable ananicy-cpp.service
-sudo systemctl enable reflector.timer
-sudo systemctl enable paccache.timer
-sudo systemctl enable fstrim.timer
-```
+- [profile-sync-daemon](https://wiki.archlinux.org/title/Profile-sync-daemon) puts your browser's profile into memory so it would decrease I/O operations in your disks.
+- [zram-generator](https://wiki.archlinux.org/title/Zram)
+- [Arch Linux Optimization Guide](https://ventureo.codeberg.page/) Translate to english if you can't read Russian.
+- Install cachyos-settings.
+- CachyOs [Post-install steps](https://wiki.cachyos.org/first_steps/first-steps/)
+- CachyOs [General System Tweaks](https://wiki.cachyos.org/general_info/general_system_tweaks/)
+- ArchWiki [Gaming](https://wiki.archlinux.org/title/Gaming#Improving_performance)
 
 ## Configuring ufw
 
@@ -207,11 +192,38 @@ sudo ufw default deny incoming
 sudo ufw enable
 ```
 
-## Configuring your ICC profiles
-
-https://wiki.archlinux.org/title/ICC_profiles#xiccd
+## Enabling services and timers
 
 ```
+psd
+systemctl --user enable pipewire-pulse.service
+systemctl --user enable psd
+sudo systemctl enable sddm.service
+sudo systemctl enable NetworkManager.service
+sudo systemctl enable bluetooth.service
+sudo systemctl enable cpupower.service
+sudo systemctl enable gopreload.service
+sudo systemctl enable udisks2.service
+sudo systemctl enable ufw.service
+sudo systemctl enable irqbalance.service
+sudo systemctl enable ananicy-cpp.service
+sudo systemctl enable reflector.service
+sudo systemctl enable paccache.timer
+sudo systemctl enable fstrim.timer
+```
+
+## Configuring your ICC profiles
+
+### dispwin
+
+`sudo pacman -S argyllcms`
+
+dispwin -d 1 '..../Documents/Monitor Drivers/KA242Y.icm' &
+
+### xiccd
+
+```
+cp icc_profile /usr/share/color/icc/colord/
 xiccd
 colormgr get-devices
 colormgr get-profiles
@@ -223,7 +235,8 @@ cat /etc/xdg/autostart/xiccd.desktop
 ## Set-up monitor EDID
 
 ```
-cp edid2.bin /usr/lib/firmware/edid/
+sudo mkdir /usr/lib/firmware/edid/
+cp edid-HDMI.bin /usr/lib/firmware/edid/
 ```
 
 ## Set-up CoreCtrl
@@ -235,3 +248,5 @@ https://gitlab.com/corectrl/corectrl/-/wikis/Setup
 > gopreload-prepare _program_
 > gopreload-prepare kate
 > gopreload-prepare alacritty
+> gopreload-prepare pcmanfm-qt
+> gopreload-prepare lximage-qt

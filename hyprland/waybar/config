@@ -1,27 +1,31 @@
 {
-    "layer": "top",
+    // "layer": "top",
     "position": "bottom", // Waybar position (top|bottom|left|right)
     //"mode": "dock",
-    "height": 28, // Waybar height (to be removed for auto height)
+    "height": 24, // Waybar height (to be removed for auto height)
     "spacing": 0, // Gaps between modules (4px)
     "output": "HDMI-A-2",
-    "exclusive": true,
-    "passthrough": false,
+    // "output": "DP-1",
+    // "passthrough": false,
     "gtk-layer-shell": true,
     // Choose the order of the modules
     "modules-left": ["tray", "idle_inhibitor", "disk", "hyprland/workspaces"],
     "modules-center": ["clock", "clock#time"],
     "modules-right": ["custom/kernel", "pulseaudio", "cpu", "memory"],
-    "hyprland/window": {
-        "max-length": 200,
-        "format": "{}",
-        "separate-outputs": true
-    },
+    // "hyprland/window": {
+    //     "max-length": 200,
+    //     "format": "{}",
+    //     "separate-outputs": true
+    // },
     "hyprland/workspaces": {
-        "disable-scroll": "true",
-        "all-outputs": "false",
+        "active-only": false,
+        "disable-scroll": true,
+        "all-outputs": true,
         "on-click": "activate",
-        "sort-by-number": "true"
+        "sort-by": "number",
+        "persistent-workspaces": {
+             "*": 1 // 1 workspaces by default on every monitor
+       }
     },
     "tray": {
         "spacing": 10
@@ -33,19 +37,12 @@
         "format": "  {:%H:%M}"
     },
     "cpu": {
-        "interval": 1,
         "format": "{usage}%  ",
         "tooltip": false
     },
     "memory": {
         "format": "{used} / {total}     {swapUsed} / {swapTotal}  " 
     },
-    // "temperature": {
-    //     "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-    //     "format": "{temperatureC}  ",
-    //     "interval": "1000",
-    //     "on-click": "psensor"
-    // },
     "pulseaudio": {
         "format": "{icon}  {volume}% ",
         "format-muted": "",
@@ -55,7 +52,7 @@
         "on-scroll-down": "~/.config/waybar/scripts/volume --dec",
         "scroll-step": 2,
         "format-icons": {
-            "default": ["奄", "奔", "墳"]
+            "default": ["", "", ""]
         },
     },
     "disk": {

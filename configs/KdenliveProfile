@@ -1,0 +1,1 @@
+ab=256k acodec=aac ar=48000 channels=2 f=mp4 hwaccel=vaapi hwaccel_device=/dev/dri/renderD128 hwaccel_output_format=vaapi progressive=1 real_time=-1 threads=12 vb=18000k vbufsize=0 vcodec=hevc_vaapi vmaxrate=18000k vminrate=18000k

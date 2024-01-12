@@ -3,7 +3,7 @@
 GRUB_DEFAULT=saved
 GRUB_TIMEOUT=1
 GRUB_DISTRIBUTOR="Arch"
-GRUB_CMDLINE_LINUX_DEFAULT="quiet loglevel=3 rd.udev.log_level=3 lpj=2496000 systemd.show_status=auto page_alloc.shuffle=1 threadirqs split_lock_detect=off pci=pcie_bus_perf intel_pstate=passive drm.edid_firmware=HDMI-A-1:edid/edid2.bin amdgpu.ppfeaturemask=0xffffffff"
+GRUB_CMDLINE_LINUX_DEFAULT="quiet nvme_load=YES zswap.enabled=0 loglevel=3 page_alloc.shuffle=1 threadirqs split_lock_detect=off pci=pcie_bus_perf intel_pstate=passive amdgpu.ppfeaturemask=0xffffffff retbleed=off gather_data_sampling=off drm.edid_firmware=HDMI-A-1:edid/edid-HDMI.bin lpj=4992000"
 GRUB_CMDLINE_LINUX="tsc=reliable clocksource=tsc"
 
 # Preload both GPT and MBR modules so that they are not missed

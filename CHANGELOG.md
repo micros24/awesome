@@ -1,3 +1,69 @@
+# January 14, 2024
+
+- Streamlined links into texts.
+- Changed installations...
+  - Reduced font installations.
+  - Added 32-bit libraries.
+  - Added `cachy-browser`.
+- AwesomeWm configs...
+  - Moved `xf86-video-amdgpu` to AwesomeWM configs.
+- Hyprland configs...
+  - Added `pamixer` and `grimblast-git` to Hyprland configs.
+- Personal installs...
+  - Moved `easyeffects psensor corectrl` from optional packages.
+  - Moved `brave-bin` from flatpak to package.
+  - Added...
+  ```
+  dbus-broker kdenlive obs-vkcapture lib32-obs-vkcapture obs-pipewire-audio-capture \
+  libreoffice-still rocm-opencl-runtime opencl-clover-mesa lib32-opencl-clover-mesa
+  ```
+- Changed section heading "Setting up games" to "Setting up gaming"..
+  - Added `cachyos-gaming-meta vkbasalt lib32-vkbasalt wmctrl protonup-qt`.
+- Changed zsh to fish as my shell...
+  - Added `cachyos-fish-config`.
+  - Changed change shell command to fish.
+  - Moved `tide` to this section.
+- Essential configurations...
+  - Fixed Arch Linux Optimization Guide link.
+  - Added `cachyos-settings`.
+  - Moved "Configuring ufw" to this section.
+  - Removed dbus-broker from services (it is run automatically).
+  - Changed "reflector.timer" to "reflector.service"
+- Configuring your ICC profiles...
+  - Added dispwin.
+  - Added new xiccd instruction.
+  - Added `mkdir` to setting up EDID.
+  - Changed EDID filename accordingly.
+- grub config...
+  - Added `zswap.enabled=0`.
+  - Re-added `split_lock_detect=off`.
+  - Removed `loglevel=3 rd.udev.log_level=3 modprobe.blacklist=iTCO_wdt systemd.show_status=auto`.
+  - Changed EDID filename accordingly.
+- Added `pcmanfm-qt` and `lximage-qt` to gopreload.
+- Added kdenlive rendering profile to configs.
+- Removed Optional packages section.
+- Removed zsh.
+
+# January 12, 2024
+
+- Theme installation
+  - Added Layan-kde for Kvantum.
+  - Added tide for fish users.
+- Added new category Performance Optimizations
+  - Added profile-sync-daemon.
+  - Added zram-generator.
+  - Added Arch Linux Optimization Guide.
+  - Added CachyOs tweaks.
+  - Added ArchWiki Gaming.
+- Added swappy to hyprland.
+- Added CREDITS.md.
+- Updated hyprland.conf.
+- Updated grub.
+- Updated window-rules.conf.
+- Replaced rofi-lbonn-wayland-git with wofi if using Hyrpland.
+- Removed imput-remapper.service.
+- Removed colord.service.
+
 # November 8, 2023
 
 - Added note on Hyprland in README.md.
