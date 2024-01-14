@@ -15,7 +15,7 @@
   - Added...
   ```
   dbus-broker kdenlive obs-vkcapture lib32-obs-vkcapture obs-pipewire-audio-capture \
-  libreoffice-still opencl-clover-mesa lib32-opencl-clover-mesa
+  libreoffice-still intel-compute-runtime rocm-opencl-runtime
   ```
 - Changed section heading "Setting up games" to "Setting up gaming"..
   - Added `cachyos-gaming-meta vkbasalt lib32-vkbasalt wmctrl protonup-qt`.
