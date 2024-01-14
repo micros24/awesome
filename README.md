@@ -178,7 +178,7 @@ Environment:
 - [profile-sync-daemon](https://wiki.archlinux.org/title/Profile-sync-daemon) puts your browser's profile into memory so it would decrease I/O operations in your disks.
 - [zram-generator](https://wiki.archlinux.org/title/Zram)
 - [Arch Linux Optimization Guide](https://ventureo.codeberg.page/) Translate to english if you can't read Russian.
-- Install cachyos-settings.
+- Install `cachyos-settings`.
 - CachyOs [Post-install steps](https://wiki.cachyos.org/first_steps/first-steps/)
 - CachyOs [General System Tweaks](https://wiki.cachyos.org/general_info/general_system_tweaks/)
 - ArchWiki [Gaming](https://wiki.archlinux.org/title/Gaming#Improving_performance)
@@ -215,9 +215,10 @@ sudo systemctl enable fstrim.timer
 
 ### dispwin
 
-`sudo pacman -S argyllcms`
-
+```
+sudo pacman -S argyllcms
 dispwin -d 1 '..../Documents/Monitor Drivers/KA242Y.icm' &
+```
 
 ### xiccd
 
@@ -245,7 +246,11 @@ https://gitlab.com/corectrl/corectrl/-/wikis/Setup
 ## Setup preload
 
 > gopreload-prepare _program_
+
 > gopreload-prepare kate
+
 > gopreload-prepare alacritty
+
 > gopreload-prepare pcmanfm-qt
+
 > gopreload-prepare lximage-qt
