@@ -86,8 +86,7 @@ yay -S kvantum firefox qt5ct util-linux bitwarden bleachbit kate fish \
     linux-lts obs-studio-tytan652 lsp-plugins breeze breeze-gtk pkgstats \
     ffmpegthumbnailer libinput dbus-broker easyeffects psensor corectrl \
     kdenlive obs-vkcapture lib32-obs-vkcapture obs-pipewire-audio-capture \
-    brave-bin libreoffice-still opencl-clover-mesa lib32-opencl-clover-mesa \
-    rocm-opencl-runtime
+    brave-bin libreoffice-still opencl-clover-mesa lib32-opencl-clover-mesa
 
 flatpak install flathub com.spotify.Client
 flatpak install flathub com.github.tchx84.Flatseal
