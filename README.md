@@ -87,7 +87,7 @@ yay -S kvantum firefox qt5ct util-linux bitwarden bleachbit kate fish \
     ffmpegthumbnailer libinput dbus-broker easyeffects psensor corectrl \
     kdenlive obs-vkcapture lib32-obs-vkcapture obs-pipewire-audio-capture \
     brave-bin libreoffice-still opencl-clover-mesa lib32-opencl-clover-mesa \
-    rocm-opencl-runtime:
+    rocm-opencl-runtime
 
 flatpak install flathub com.spotify.Client
 flatpak install flathub com.github.tchx84.Flatseal
