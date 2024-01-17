@@ -254,3 +254,18 @@ https://gitlab.com/corectrl/corectrl/-/wikis/Setup
 > gopreload-prepare pcmanfm-qt
 
 > gopreload-prepare lximage-qt
+
+# KDE Plasma
+
+Setting alt-tab delay to 0ms
+
+```
+kwriteconfig5 --file ~/.config/kwinrc --group TabBox --key DelayTime 0
+qdbus org.kde.KWin /KWin reconfigure
+```
+
+Environment variable to set primary gpu
+
+```
+KWIN_DRM_DEVICES=/dev/dri/card1:/dev/dri/card0
+```

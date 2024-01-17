@@ -1,3 +1,7 @@
+# January 17, 2024
+
+- Added a new section "KDE Plasma".
+
 # January 14, 2024
 
 - Streamlined links into texts.
