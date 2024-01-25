@@ -1,3 +1,15 @@
+# January 25, 2024
+
+- Changed 'Installing CachyOS repositories' to 'Installing x86_64_v3 repositories'...
+  - Added ALHP repository.
+  - Changed CachyOS section to include pacman.conf additions.
+- Added mako to Hyprland applications in description (The packages is not changed, only the description).
+- 'KDE Plasma' section...
+  - Added '## Setting SDDM to Wayland' category.
+  - Added KWin scripts.
+- Changed 'Rofi' to 'Wofi' in Hyprland description.
+- Fixed formatting.
+
 # January 17, 2024
 
 - Added a new section "KDE Plasma".

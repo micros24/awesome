@@ -2,20 +2,6 @@
 
 Hyprland has implemented tearing. However, the tearing implementation makes it so that you use a software cursor. This means that when your game is lagging, the cursor on your screen will only update equal to your fps. It is not independent of your mouse movement. For example, when your game is lagging at 2 fps, the cursor on your screen will only move twice every second. Its placement is determined on how you moved your mouse physically. Another example: If your game is lagging at 0 fps (loading screen, long lag spikes), your cursor on screen will not move, even if you moved your mouse physically. This may not be a significant impact on your gaming preferences, but I like my cursor where I move my mouse and when I move my mouse.
 
-# Installing CachyOS repositories
-
-```
-sudo pacman-key --recv-keys F3B607488DB35A47 --keyserver keyserver.ubuntu.com
-sudo pacman-key --lsign-key F3B607488DB35A47
-sudo pacman -U 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-keyring-2-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-mirrorlist-17-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-v3-mirrorlist-17-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-v4-mirrorlist-5-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/pacman-6.0.2-10-x86_64.pkg.tar.zst'
-```
-
-Edit /etc/pacman.conf depending on your CPU's architecture (x86-64-v3 or x86_64-v4) (https://wiki.cachyos.org/en/home/Repo) then execute...
-
-```
-sudo pacman -Syyuu
-```
-
 # Installing yay (Yet Another Yogurt) AUR helper
 
 ```
@@ -32,6 +18,51 @@ yay -Y --gendb
 yay -Y --devel --save
 yay --editmenu --nodiffmenu --save
 ```
+
+# Installing x86_64_v3 repositories
+
+## CachyOS
+
+```
+sudo pacman-key --recv-keys F3B607488DB35A47 --keyserver keyserver.ubuntu.com
+sudo pacman-key --lsign-key F3B607488DB35A47
+sudo pacman -U 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-keyring-2-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-mirrorlist-17-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-v3-mirrorlist-17-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-v4-mirrorlist-5-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/pacman-6.0.2-10-x86_64.pkg.tar.zst'
+```
+
+`sudo nano /etc/pacman.conf`
+
+```
+[cachyos-v3]
+Include = /etc/pacman.d/cachyos-v3-mirrorlist
+
+[cachyos-core-v3]
+Include = /etc/pacman.d/cachyos-v3-mirrorlist
+
+[cachyos-extra-v3]
+Include = /etc/pacman.d/cachyos-v3-mirrorlist
+```
+
+`sudo pacman -Syyuu`
+
+## ALHP
+
+`yay -S alhp-keyring alhp-mirrorlist`
+
+`sudo nano /etc/pacman.conf`
+
+```
+[core-x86-64-v3]
+Include = /etc/pacman.d/alhp-mirrorlist
+
+[extra-x86-64-v3]
+Include = /etc/pacman.d/alhp-mirrorlist
+
+[multilib-x86-64-v3]
+Include = /etc/pacman.d/alhp-mirrorlist
+
+```
+
+`sudo pacman -Syyuu`
 
 # Mandatory packages
 
@@ -59,7 +90,7 @@ yay -S awesome-git picom-git polybar-git wleave-git xfce4-clipman-plugin \
 
 # Installing my Hyprland configs
 
-Waybar is my status bar. Wleave is my logout screen. Rofi is my application runner. wl-clipboard is my clipboard manager. Swaylock is my lockscreen. Grim is my screenshot tool.
+Waybar is my status bar. Wleave is my logout screen. Wofi is my application runner. wl-clipboard is my clipboard manager. Swaylock is my lockscreen. Grim is my screenshot tool. Mako is my notifications manager.
 
 ```
 yay -S xdg-desktop-portal-hyprland-git hyprland-git waybar-git mako \
@@ -157,19 +188,19 @@ flatpak run com.github.tchx84.Flatseal
 
 Filesystem:
 
-> xdg-config/Kvantum:ro
+`xdg-config/Kvantum:ro`
 
-> ~/.themes
+`~/.themes`
 
-> ~/.icons
+`~/.icons`
 
 Environment:
 
-> ICON_THEME=Reversal-purple-dark
+`ICON_THEME=Reversal-purple-dark`
 
-> QT_STYLE_OVERRIDE=kvantum
+`QT_STYLE_OVERRIDE=kvantum`
 
-> GTK_THEME=Layan-Dark
+`GTK_THEME=Layan-Dark`
 
 # Essential configurations
 
@@ -178,7 +209,7 @@ Environment:
 - [profile-sync-daemon](https://wiki.archlinux.org/title/Profile-sync-daemon) puts your browser's profile into memory so it would decrease I/O operations in your disks.
 - [zram-generator](https://wiki.archlinux.org/title/Zram)
 - [Arch Linux Optimization Guide](https://ventureo.codeberg.page/) Translate to english if you can't read Russian.
-- Install `cachyos-settings`.
+- Install `cachyos-settings`
 - CachyOs [Post-install steps](https://wiki.cachyos.org/first_steps/first-steps/)
 - CachyOs [General System Tweaks](https://wiki.cachyos.org/general_info/general_system_tweaks/)
 - ArchWiki [Gaming](https://wiki.archlinux.org/title/Gaming#Improving_performance)
@@ -245,15 +276,11 @@ https://gitlab.com/corectrl/corectrl/-/wikis/Setup
 
 ## Setup preload
 
-> gopreload-prepare _program_
-
-> gopreload-prepare kate
-
-> gopreload-prepare alacritty
-
-> gopreload-prepare pcmanfm-qt
-
-> gopreload-prepare lximage-qt
+`gopreload-prepare _program_`
+`gopreload-prepare kate`
+`gopreload-prepare alacritty`
+`gopreload-prepare pcmanfm-qt`
+`gopreload-prepare lximage-qt`
 
 # KDE Plasma
 
@@ -269,4 +296,19 @@ Environment variables
 ```
 KWIN_DRM_DEVICES=/dev/dri/card1:/dev/dri/card0 # set primary gpu
 KWIN_DRM_NO_AMS=1 # allow tearing
+```
+
+Install `Dynamic Workspaces` and `Polonium` KWin Scripts.
+
+## Setting SDDM to Wayland
+
+/etc/sddm.conf.d/10-wayland.conf
+
+```
+[General]
+DisplayServer=wayland
+GreeterEnvironment=QT_WAYLAND_SHELL_INTEGRATION=layer-shell
+
+[Wayland]
+CompositorCommand=kwin_wayland --drm --no-lockscreen --no-global-shortcuts --locale1
 ```
