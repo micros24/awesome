@@ -4,7 +4,7 @@ Hyprland has implemented tearing. However, the tearing implementation makes it s
 
 ### January 31, 2024
 
-Performance on my PC has been better since the last time I used Hyprland. However, the note above still applies and I still notice the occasional lag and therefore, cursor lag. It has come to a point that lag doesnt not happen frequently, compared to before, so the cursor lag does not happen as frequently. I'm back to using Hyprland as my main Window Manager.
+Performance on my PC has been better since the last time I used Hyprland. However, the note above still applies and I still notice the occasional lag and therefore, cursor lag. It has come to a point that lag doesn't happen frequently, compared to before, so the cursor lag does not happen as frequently. I'm back to using Hyprland as my main Window Manager.
 
 # Installing yay (Yet Another Yogurt) AUR helper
 
