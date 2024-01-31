@@ -1,6 +1,7 @@
 # January 31, 2024
 
 - Changed and updated note regarding Hyprland.
+- Added note on x86_64_v3 section.
 
 # January 25, 2024
 

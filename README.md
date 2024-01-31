@@ -25,6 +25,8 @@ yay --editmenu --nodiffmenu --save
 
 # Installing x86_64_v3 repositories
 
+You have two repository choices: CachyOS or ALHP.
+
 ## CachyOS
 
 ```
