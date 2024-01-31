@@ -1,3 +1,7 @@
+# January 31, 2024
+
+- Changed and updated note regarding Hyprland.
+
 # January 25, 2024
 
 - Changed 'Installing CachyOS repositories' to 'Installing x86_64_v3 repositories'...

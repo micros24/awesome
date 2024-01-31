@@ -1,6 +1,10 @@
-# I'm not actively using Hyprland...
+# A note on Hyprland...
 
 Hyprland has implemented tearing. However, the tearing implementation makes it so that you use a software cursor. This means that when your game is lagging, the cursor on your screen will only update equal to your fps. It is not independent of your mouse movement. For example, when your game is lagging at 2 fps, the cursor on your screen will only move twice every second. Its placement is determined on how you moved your mouse physically. Another example: If your game is lagging at 0 fps (loading screen, long lag spikes), your cursor on screen will not move, even if you moved your mouse physically. This may not be a significant impact on your gaming preferences, but I like my cursor where I move my mouse and when I move my mouse.
+
+### January 31, 2024
+
+Performance on my PC has been better since the last time I used Hyprland. However, the note above still applies and I still notice the occasional lag and therefore, cursor lag. It has come to a point that lag doesnt not happen frequently, compared to before, so the cursor lag does not happen as frequently. I'm back to using Hyprland as my main Window Manager.
 
 # Installing yay (Yet Another Yogurt) AUR helper
 
