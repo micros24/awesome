@@ -32,7 +32,7 @@ You have two repository choices: CachyOS or ALHP.
 ```
 sudo pacman-key --recv-keys F3B607488DB35A47 --keyserver keyserver.ubuntu.com
 sudo pacman-key --lsign-key F3B607488DB35A47
-sudo pacman -U 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-keyring-2-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-mirrorlist-17-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-v3-mirrorlist-17-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-v4-mirrorlist-5-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/pacman-6.0.2-10-x86_64.pkg.tar.zst'
+sudo pacman -U 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-keyring-3-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-mirrorlist-18-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-v3-mirrorlist-18-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-v4-mirrorlist-6-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/pacman-6.0.2-16-x86_64.pkg.tar.zst'
 ```
 
 `sudo nano /etc/pacman.conf`
@@ -73,15 +73,16 @@ Include = /etc/pacman.d/alhp-mirrorlist
 # Mandatory packages
 
 ```
-yay -S xdg-user-dirs xdg-desktop-portal xdg-desktop-portal-gtk polkit-gnome \
+yay -S xdg-user-dirs xdg-desktop-portal-gtk polkit-gnome pcmanfm-qt-git \
     pavucontrol network-manager-applet bluez bluez-utils blueman sddm-git \
-    pcmanfm-qt alacritty flatpak file-roller lximage-qt htop \
+    alacritty flatpak file-roller lximage-qt-git htop xorg-xhost \
     cpupower gopreload-git mpv pacman-contrib reflector ufw mesa timeshift \
     intel-media-driver libva-mesa-driver lib32-libva-mesa-driver gvfs \
     mesa-vdpau lib32-mesa-vdpau vulkan-radeon lib32-vulkan-radeon \
     vulkan-intel lib32-vulkan-intel ananicy-cpp-git irqbalance r8168-dkms \
     pipewire lib32-pipewire pipewire-alsa pipewire-pulse pipewire-jack \
-    wireplumber fastfetch cachyos-ananicy-rules-git cachy-browser
+    wireplumber fastfetch cachyos-ananicy-rules-git cachy-browser \
+    qt5-wayland libdbusmenu-qt5 gnome-keyring
 ```
 
 # Installing my AwesomeWM configs
@@ -90,8 +91,8 @@ Picom is my compositor. Polybar is my status bar. Wleave is my logout screen. Ro
 
 ```
 yay -S awesome-git picom-git polybar-git wleave-git xfce4-clipman-plugin \
-    rofi-lbonn-wayland-git xlockmore-nomotif playerctl scrot pamixer nitrogen \
-    xf86-video-amdgpu lxappearance-gtk3
+    rofi-lbonn-wayland-git xlockmore-nomotif playerctl pamixer nitrogen \
+    xf86-video-amdgpu lxappearance-gtk3 scrot
 ```
 
 # Installing my Hyprland configs
@@ -100,7 +101,7 @@ Waybar is my status bar. Wleave is my logout screen. Wofi is my application runn
 
 ```
 yay -S xdg-desktop-portal-hyprland-git hyprland-git waybar-git mako \
-    grim-git hyprpaper-git wl-clipboard wl-clip-persist nwg-look-bin \
+    grim-git hyprpaper-git wl-clip-persist cliphist nwg-look-bin \
     swaylock-effects-git wleave-git wofi swayidle-git swappy grimblast-git \
     pamixer
 ```
@@ -118,9 +119,9 @@ Press SUPER + SHIFT + U to update your hyprland plugin loader
 # My personal installs
 
 ```
-yay -S kvantum firefox qt5ct util-linux bitwarden bleachbit kate fish \
+yay -S kvantum firefox qt5ct util-linux bitwarden bleachbit geany fish \
     github-cli gimp linux-xanmod-bore linux-xanmod-bore-headers calf meld \
-    linux-lts obs-studio-tytan652 lsp-plugins breeze breeze-gtk pkgstats \
+    linux-lts obs-studio-tytan652 lsp-plugins breeze-snow-cursor pkgstats \
     ffmpegthumbnailer libinput dbus-broker easyeffects psensor corectrl \
     kdenlive obs-vkcapture lib32-obs-vkcapture obs-pipewire-audio-capture \
     brave-bin libreoffice-still rocm-opencl-runtime intel-compute-runtime
@@ -135,7 +136,7 @@ Install [Mudfish VPN](https://mudfish.net/download) from their website.
 Install packages from [cachyos-gaming-meta](https://github.com/CachyOS/CachyOS-PKGBUILDS/blob/master/cachyos-gaming-meta/PKGBUILD).
 
 ```
-yay -S --needed vkbasalt lib32-vkbasalt wmctrl protonup-qt
+yay -S --needed vkbasalt lib32-vkbasalt wmctrl protonup-qt proton-cachyos
 ```
 
 # Themeing
@@ -144,11 +145,12 @@ yay -S --needed vkbasalt lib32-vkbasalt wmctrl protonup-qt
 
 ```
 yay -S ttf-hack ttf-meslo-nerd-font-powerlevel10k ttf-font-awesome \
-    ttf-ebgaramond gnu-free-fonts noto-fonts noto-fonts-emoji noto-fonts-cjk \
-    ttf-liberation adobe-source-han-sans-cn-fonts adobe-source-han-sans-jp-fonts \
-    adobe-source-han-sans-kr-fonts noto-color-emoji-fontconfig freetype2 ttf-dejavu \
-    awesome-terminal-fonts cantarell-fonts opendesktop-fonts ttf-bitstream-vera \
-    ttf-opensans ttf-meslo-nerd noto-fonts-cjk
+    ttf-ebgaramond gnu-free-fonts noto-fonts noto-fonts-emoji \
+    adobe-source-han-sans-cn-fonts adobe-source-han-sans-jp-fonts \
+    adobe-source-han-sans-kr-fonts freetype2 ttf-dejavu ttf-liberation \
+    awesome-terminal-fonts opendesktop-fonts ttf-bitstream-vera \
+    ttf-opensans ttf-meslo-nerd noto-fonts-cjk noto-fonts-cjk \
+     noto-color-emoji-fontconfig cantarell-fonts
 ```
 
 ### Installing MiBroSoft fonts
@@ -284,7 +286,7 @@ https://gitlab.com/corectrl/corectrl/-/wikis/Setup
 
 `gopreload-prepare _program_`
 
-`gopreload-prepare kate`
+`gopreload-prepare geany`
 
 `gopreload-prepare alacritty`
 
