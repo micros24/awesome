@@ -1,0 +1,6 @@
+{
+    "device": "alsa_output.usb-Synaptics_CX31993_384Khz_HIFI_AUDIO-00.analog-stereo",
+    "device-description": "CX31993 384Khz HIFI AUDIO Analog Stereo",
+    "device-profile": "analog-output-headphones",
+    "preset-name": "Default"
+}
