@@ -35,7 +35,9 @@ sudo pacman-key --lsign-key F3B607488DB35A47
 sudo pacman -U 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-keyring-3-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-mirrorlist-18-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-v3-mirrorlist-18-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-v4-mirrorlist-6-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/pacman-6.0.2-16-x86_64.pkg.tar.zst'
 ```
 
-`sudo nano /etc/pacman.conf`
+```
+sudo nano /etc/pacman.conf
+```
 
 ```
 [cachyos-v3]
@@ -48,13 +50,19 @@ Include = /etc/pacman.d/cachyos-v3-mirrorlist
 Include = /etc/pacman.d/cachyos-v3-mirrorlist
 ```
 
-`sudo pacman -Syyuu`
+```
+sudo pacman -Syyuu
+```
 
 ## ALHP
 
-`yay -S alhp-keyring alhp-mirrorlist`
+```
+yay -S alhp-keyring alhp-mirrorlist
+```
 
-`sudo nano /etc/pacman.conf`
+```
+sudo nano /etc/pacman.conf
+```
 
 ```
 [core-x86-64-v3]
@@ -67,7 +75,9 @@ Include = /etc/pacman.d/alhp-mirrorlist
 Include = /etc/pacman.d/alhp-mirrorlist
 ```
 
-`sudo pacman -Syyuu`
+```
+sudo pacman -Syyuu
+```
 
 # Mandatory packages
 
@@ -284,15 +294,21 @@ https://gitlab.com/corectrl/corectrl/-/wikis/Setup
 
 ## Setup preload
 
-`gopreload-prepare _program_`
+```
+gopreload-prepare geany
+```
 
-`gopreload-prepare geany`
+```
+gopreload-prepare alacritty
+```
 
-`gopreload-prepare alacritty`
+```
+gopreload-prepare pcmanfm-qt
+```
 
-`gopreload-prepare pcmanfm-qt`
-
-`gopreload-prepare lximage-qt`
+```
+gopreload-prepare lximage-qt
+```
 
 # KDE Plasma
 
