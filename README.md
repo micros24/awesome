@@ -65,7 +65,6 @@ Include = /etc/pacman.d/alhp-mirrorlist
 
 [multilib-x86-64-v3]
 Include = /etc/pacman.d/alhp-mirrorlist
-
 ```
 
 `sudo pacman -Syyuu`
@@ -151,7 +150,7 @@ yay -S ttf-hack ttf-meslo-nerd-font-powerlevel10k ttf-font-awesome \
     adobe-source-han-sans-kr-fonts freetype2 ttf-dejavu ttf-liberation \
     awesome-terminal-fonts opendesktop-fonts ttf-bitstream-vera \
     ttf-opensans ttf-meslo-nerd noto-fonts-cjk noto-fonts-cjk \
-     noto-color-emoji-fontconfig cantarell-fonts
+    noto-color-emoji-fontconfig cantarell-fonts
 ```
 
 ### Installing MiBroSoft fonts
@@ -253,14 +252,14 @@ sudo systemctl enable fstrim.timer
 
 ## Configuring your ICC profiles
 
-### dispwin
+### dispwin for Wayland
 
 ```
 sudo pacman -S argyllcms
 dispwin -d 1 '..../Documents/Monitor Drivers/KA242Y.icm' &
 ```
 
-### xiccd
+### xiccd for X11
 
 ```
 cp icc_profile /usr/share/color/icc/colord/
