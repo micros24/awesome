@@ -283,9 +283,13 @@ https://gitlab.com/corectrl/corectrl/-/wikis/Setup
 ## Setup preload
 
 `gopreload-prepare _program_`
+
 `gopreload-prepare kate`
+
 `gopreload-prepare alacritty`
+
 `gopreload-prepare pcmanfm-qt`
+
 `gopreload-prepare lximage-qt`
 
 # KDE Plasma
