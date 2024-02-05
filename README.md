@@ -82,7 +82,7 @@ yay -S xdg-user-dirs xdg-desktop-portal-gtk polkit-gnome pcmanfm-qt-git \
     vulkan-intel lib32-vulkan-intel ananicy-cpp-git irqbalance r8168-dkms \
     pipewire lib32-pipewire pipewire-alsa pipewire-pulse pipewire-jack \
     wireplumber fastfetch cachyos-ananicy-rules-git cachy-browser \
-    qt5-wayland libdbusmenu-qt5 gnome-keyring
+    qt5-wayland libdbusmenu-qt5 gnome-keyring droidcam
 ```
 
 # Installing my AwesomeWM configs
@@ -124,7 +124,8 @@ yay -S kvantum firefox qt5ct util-linux bitwarden bleachbit geany fish \
     linux-lts obs-studio-tytan652 lsp-plugins breeze-snow-cursor pkgstats \
     ffmpegthumbnailer libinput dbus-broker easyeffects psensor corectrl \
     kdenlive obs-vkcapture lib32-obs-vkcapture obs-pipewire-audio-capture \
-    brave-bin libreoffice-still rocm-opencl-runtime intel-compute-runtime
+    brave-bin libreoffice-still rocm-opencl-runtime intel-compute-runtime \
+    weston-git
 
 flatpak install flathub com.spotify.Client
 flatpak install flathub com.github.tchx84.Flatseal

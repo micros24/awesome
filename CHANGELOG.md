@@ -2,16 +2,18 @@
 
 - Tweaked formatting.
 - Updated CachyOS repository.
+- Updated dotFiles.
+- Updated Hyprland dotFiles.
 - Added `proton-cachyos` to Gaming section.
 - Changed `gopreload-prepare kate` to `gopreload-prepare geany`
 - Mandatory packages section...
-  - Added `pcmanfm-qt-git lximage-qt-git xorg-xhost qt5-wayland qt5-wayland libdbusmenu-qt5 gnome-keyring`
+  - Added `pcmanfm-qt-git lximage-qt-git xorg-xhost qt5-wayland qt5-wayland libdbusmenu-qt5 gnome-keyring droidcam`
   - Removed `xdg-desktop-portal pcmanfm-qt lximage-qt`
 - Hyprland configs section...
   - Added `cliphist`
   - Removed `wl-clipboard`
 - My Personal installs section...
-  - Added `geany breeze-snow-cursor`
+  - Added `geany breeze-snow-cursor weston-git`
   - Removed `kate breeze breeze-gtk`
 
 # January 31, 2024
