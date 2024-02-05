@@ -4,3 +4,4 @@
 # Syntax: simple "KEY=VAL" pairs on separate lines
 #
 LD_BIND_NOW=1
+__GL_THREADED_OPTIMIZATIONS=1
