@@ -42,12 +42,12 @@ sudo nano /etc/pacman.conf
 ```
 [cachyos-v3]
 Include = /etc/pacman.d/cachyos-v3-mirrorlist
-
 [cachyos-core-v3]
 Include = /etc/pacman.d/cachyos-v3-mirrorlist
-
 [cachyos-extra-v3]
 Include = /etc/pacman.d/cachyos-v3-mirrorlist
+[cachyos]
+Include = /etc/pacman.d/cachyos-mirrorlist
 ```
 
 ```
@@ -67,10 +67,8 @@ sudo nano /etc/pacman.conf
 ```
 [core-x86-64-v3]
 Include = /etc/pacman.d/alhp-mirrorlist
-
 [extra-x86-64-v3]
 Include = /etc/pacman.d/alhp-mirrorlist
-
 [multilib-x86-64-v3]
 Include = /etc/pacman.d/alhp-mirrorlist
 ```
@@ -117,7 +115,7 @@ yay -S xdg-desktop-portal-hyprland-git hyprland-git waybar-git mako \
 
 ## Installing hyprload
 
-dependencies: cpio, ninja
+dependencies: cpio, ninja, jq
 
 ```
 curl -sSL https://raw.githubusercontent.com/Duckonaut/hyprload/main/install.sh | bash
@@ -128,16 +126,16 @@ Press SUPER + SHIFT + U to update your hyprland plugin loader
 # My personal installs
 
 ```
-yay -S kvantum firefox qt5ct util-linux bitwarden bleachbit geany fish \
+yay -S kvantum firefox qt5ct util-linux bitwarden bleachbit fish \
     github-cli gimp linux-xanmod-bore linux-xanmod-bore-headers calf meld \
-    linux-lts obs-studio-tytan652 lsp-plugins breeze-snow-cursor pkgstats \
+    linux-lts lsp-plugins breeze-snow-cursor pkgstats kdenlive weston-git \
     ffmpegthumbnailer libinput dbus-broker easyeffects psensor corectrl \
-    kdenlive obs-vkcapture lib32-obs-vkcapture obs-pipewire-audio-capture \
     brave-bin libreoffice-still rocm-opencl-runtime intel-compute-runtime \
-    weston-git
+    perl-image-exiftool
 
 flatpak install flathub com.spotify.Client
 flatpak install flathub com.github.tchx84.Flatseal
+flatpak install flathub org.kde.kwrite
 ```
 
 # Setting up gaming
@@ -147,6 +145,13 @@ Install packages from [cachyos-gaming-meta](https://github.com/CachyOS/CachyOS-P
 
 ```
 yay -S --needed vkbasalt lib32-vkbasalt wmctrl protonup-qt proton-cachyos
+```
+
+## Open Broadcasting Software (OBS) Studio
+
+```
+yay -S obs-studio-tytan652 obs-vkcapture lib32-obs-vkcapture \
+    obs-pipewire-audio-capture libmfx onevpl-intel-gpu
 ```
 
 # Themeing
@@ -295,7 +300,7 @@ https://gitlab.com/corectrl/corectrl/-/wikis/Setup
 ## Setup preload
 
 ```
-gopreload-prepare geany
+gopreload-prepare org.kde.kwrite
 ```
 
 ```

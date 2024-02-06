@@ -1,3 +1,12 @@
+# February 6, 2024
+
+- Tweaked formatting.
+- Tweaked aliases.
+- Updated CachyOS repository.
+- Added `perl-image-exiftool` to "My Personal Installs".
+- Added new section "Open Broadcasting Software (OBS) Studio".
+  - Moved OBS and its plugins to this section from "My Personal Installs".
+
 # February 5, 2024
 
 - Tweaked formatting.
