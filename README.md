@@ -92,16 +92,6 @@ yay -S xdg-user-dirs xdg-desktop-portal-gtk polkit-gnome pcmanfm-qt-git \
     qt5-wayland libdbusmenu-qt5 gnome-keyring droidcam
 ```
 
-# Installing my AwesomeWM configs
-
-Picom is my compositor. Polybar is my status bar. Wleave is my logout screen. Rofi is my application runner. xfce4-clipman is my clipboard manager. Scrot is my screenshot tool. xlockmore is my lockscreen. Nitrogen is what I use to set my wallpaper.
-
-```
-yay -S awesome-git picom-git polybar-git wleave-git xfce4-clipman-plugin \
-    rofi-lbonn-wayland-git xlockmore-nomotif playerctl pamixer nitrogen \
-    xf86-video-amdgpu lxappearance-gtk3 scrot
-```
-
 # Installing my Hyprland configs
 
 Waybar is my status bar. Wleave is my logout screen. Wofi is my application runner. wl-clipboard is my clipboard manager. Swaylock is my lockscreen. Grim is my screenshot tool. Mako is my notifications manager.
@@ -267,23 +257,11 @@ sudo systemctl enable fstrim.timer
 
 ## Configuring your ICC profiles
 
-### dispwin for Wayland
+### dispwin
 
 ```
 sudo pacman -S argyllcms
 dispwin -d 1 '..../Documents/Monitor Drivers/KA242Y.icm' &
-```
-
-### xiccd for X11
-
-```
-cp icc_profile /usr/share/color/icc/colord/
-xiccd
-colormgr get-devices
-colormgr get-profiles
-colormgr device-add-profile device_id profile_id
-colormgr device-make-profile-default device_id profile_id
-cat /etc/xdg/autostart/xiccd.desktop
 ```
 
 ## Set-up monitor EDID

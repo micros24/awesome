@@ -3,6 +3,7 @@
 - Added nanorc.
 - Renamed aliases to shell.
 - Updated hyprland dotfile to latest.
+- Moved X11-related stuff to its own branch.
 
 # February 6, 2024
 
