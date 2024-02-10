@@ -1,3 +1,9 @@
+# February 10, 2024
+
+- Added nanorc.
+- Renamed aliases to shell.
+- Updated hyprland dotfile to latest.
+
 # February 6, 2024
 
 - Tweaked formatting.

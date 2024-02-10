@@ -1,3 +1,6 @@
+export EDITOR=nano
+export VISUAL=nano
+
 alias showGpu='cat /sys/class/drm/card1/device/pp_od_clk_voltage'
 alias makesrcinfo='makepkg --printsrcinfo > .SRCINFO'
 alias editPacman='sudo nano /etc/pacman.conf'
