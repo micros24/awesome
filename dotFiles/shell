@@ -9,3 +9,5 @@ alias pmIsInst='pacman -Qs'
 alias pmUninst='sudo pacman -Rsn'
 alias pmInst='sudo pacman -S'
 alias removeExif='exiftool -overwrite_original -all='
+alias grubup="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias ls='ls -lah --color'
