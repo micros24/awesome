@@ -1,6 +1,7 @@
 # February 10, 2024
 
 - Added nanorc.
+- Added description to commands when adding x86_64_v3 repositories.
 - Renamed aliases to shell.
 - Updated hyprland dotfile to latest.
 - Moved X11-related stuff to its own branch.

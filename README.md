@@ -29,11 +29,15 @@ You have two repository choices: CachyOS or ALHP.
 
 ## CachyOS
 
+Install the CachyOS keyring and its required packages.
+
 ```
 sudo pacman-key --recv-keys F3B607488DB35A47 --keyserver keyserver.ubuntu.com
 sudo pacman-key --lsign-key F3B607488DB35A47
 sudo pacman -U 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-keyring-3-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-mirrorlist-18-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-v3-mirrorlist-18-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-v4-mirrorlist-6-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/pacman-6.0.2-16-x86_64.pkg.tar.zst'
 ```
+
+Edit pacman.conf to add CachyOS repositories.
 
 ```
 sudo nano /etc/pacman.conf
@@ -50,15 +54,21 @@ Include = /etc/pacman.d/cachyos-v3-mirrorlist
 Include = /etc/pacman.d/cachyos-mirrorlist
 ```
 
+Update packages to CachyOS repositories.
+
 ```
 sudo pacman -Syyuu
 ```
 
 ## ALHP
 
+Install ALHP Keyring.
+
 ```
 yay -S alhp-keyring alhp-mirrorlist
 ```
+
+Edit pacman.conf to add ALHP repositories.
 
 ```
 sudo nano /etc/pacman.conf
@@ -72,6 +82,8 @@ Include = /etc/pacman.d/alhp-mirrorlist
 [multilib-x86-64-v3]
 Include = /etc/pacman.d/alhp-mirrorlist
 ```
+
+Update packages to ALHP repositories.
 
 ```
 sudo pacman -Syyuu
@@ -176,7 +188,7 @@ Set the font of your terminal of choice to MesloLGS NF
 - Setup your themes and icons using qt5ct, kvantum, and nwg-look.
 - Setup your SDDM theme.
 - Setup your wallpaper using nitrogen if using AwesomeWM. Use hyprpaper if using Hyprland.
-- Setup global font to EB Garamond:size:14.
+- Setup global font to EB Garamond:size:12.
 
 ## Setup fish
 
