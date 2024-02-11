@@ -1,3 +1,9 @@
+# February 12, 2024
+
+- Removed fish for zsh.
+- Added `wlroots-git modprobed-db-git cachyos-zsh-config` packages.
+- Added `systemctl --user enable modprobed-db` service.
+
 # February 10, 2024
 
 - Added nanorc.

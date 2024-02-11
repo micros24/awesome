@@ -112,7 +112,7 @@ Waybar is my status bar. Wleave is my logout screen. Wofi is my application runn
 yay -S xdg-desktop-portal-hyprland-git hyprland-git waybar-git mako \
     grim-git hyprpaper-git wl-clip-persist cliphist nwg-look-bin \
     swaylock-effects-git wleave-git wofi swayidle-git swappy grimblast-git \
-    pamixer
+    pamixer wlroots-git
 ```
 
 ## Installing hyprload
@@ -133,7 +133,7 @@ yay -S kvantum firefox qt5ct util-linux bitwarden bleachbit zsh \
     linux-lts lsp-plugins breeze-snow-cursor pkgstats kdenlive weston-git \
     ffmpegthumbnailer libinput dbus-broker easyeffects psensor corectrl \
     brave-bin libreoffice-still rocm-opencl-runtime intel-compute-runtime \
-    perl-image-exiftool
+    perl-image-exiftool modprobed-db-git
 
 flatpak install flathub com.spotify.Client
 flatpak install flathub com.github.tchx84.Flatseal
@@ -185,6 +185,7 @@ Set the font of your terminal of choice to MesloLGS NF
 - [Layan-GTK-theme](https://github.com/vinceliuice/Layan-gtk-theme)
 - [Layan-KDE](https://github.com/vinceliuice/Layan-kde) for Kvantum.
 - Setup your themes and icons using qt5ct, kvantum, and nwg-look.
+- `yay -S cachyos-zsh-config`
 - Setup your SDDM theme.
 - Setup your wallpaper using nitrogen if using AwesomeWM. Use hyprpaper if using Hyprland.
 - Setup global font to EB Garamond:size:12.
@@ -235,7 +236,7 @@ sudo ufw enable
 
 ```
 psd
-systemctl --user enable pipewire-pulse.service
+systemctl --user enable modprobed-db
 systemctl --user enable psd
 sudo systemctl enable sddm.service
 sudo systemctl enable NetworkManager.service
