@@ -128,7 +128,7 @@ Press SUPER + SHIFT + U to update your hyprland plugin loader
 # My personal installs
 
 ```
-yay -S kvantum firefox qt5ct util-linux bitwarden bleachbit fish \
+yay -S kvantum firefox qt5ct util-linux bitwarden bleachbit zsh \
     github-cli gimp linux-xanmod-bore linux-xanmod-bore-headers calf meld \
     linux-lts lsp-plugins breeze-snow-cursor pkgstats kdenlive weston-git \
     ffmpegthumbnailer libinput dbus-broker easyeffects psensor corectrl \
@@ -165,9 +165,8 @@ yay -S ttf-hack ttf-meslo-nerd-font-powerlevel10k ttf-font-awesome \
     ttf-ebgaramond gnu-free-fonts noto-fonts noto-fonts-emoji \
     adobe-source-han-sans-cn-fonts adobe-source-han-sans-jp-fonts \
     adobe-source-han-sans-kr-fonts freetype2 ttf-dejavu ttf-liberation \
-    awesome-terminal-fonts opendesktop-fonts ttf-bitstream-vera \
-    ttf-opensans ttf-meslo-nerd noto-fonts-cjk noto-fonts-cjk \
-    noto-color-emoji-fontconfig cantarell-fonts
+    opendesktop-fonts ttf-bitstream-vera cantarell-fonts  ttf-opensans \
+    ttf-meslo-nerd noto-fonts-cjk noto-fonts-cjk noto-color-emoji-fontconfig
 ```
 
 ### Installing MiBroSoft fonts
@@ -189,21 +188,6 @@ Set the font of your terminal of choice to MesloLGS NF
 - Setup your SDDM theme.
 - Setup your wallpaper using nitrogen if using AwesomeWM. Use hyprpaper if using Hyprland.
 - Setup global font to EB Garamond:size:12.
-
-## Setup fish
-
-- Add [tide](https://github.com/IlanCosman/tide) if you're using fish.
-
-```
-yay -S cachyos-fish-config
-chsh -s /usr/bin/fish
-```
-
-Logout and log back in then check your default shell with `echo $SHELL`, then install tide...
-
-```
-fisher install IlanCosman/tide@v6
-```
 
 ## Setup flatpak themes
 
