@@ -3,6 +3,8 @@
 - Removed fish for zsh.
 - Added `wlroots-git modprobed-db-git cachyos-zsh-config` packages.
 - Added `systemctl --user enable modprobed-db` service.
+- Moved fish its own branch.
+- Moved KDE to its own branch.
 
 # February 10, 2024
 
