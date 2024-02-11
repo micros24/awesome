@@ -252,13 +252,13 @@ sudo systemctl enable paccache.timer
 sudo systemctl enable fstrim.timer
 ```
 
-## Configuring your ICC profiles
+# Configuring your ICC profiles
 
-### dispwin
+## dispwin
 
 ```
 sudo pacman -S argyllcms
-dispwin -d 1 '..../Documents/Monitor Drivers/KA242Y.icm' &
+dispwin -d 1 '/home/micro/Documents/Monitor Drivers/KA242Y.icm' &
 ```
 
 ## Set-up monitor EDID

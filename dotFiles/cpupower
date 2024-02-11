@@ -5,7 +5,7 @@ governor='ondemand'
 
 # Limit frequency range
 # Valid suffixes: Hz, kHz (default), MHz, GHz, THz
-min_freq="1GHz"
+#min_freq="1GHz"
 #max_freq="5.6GHz"
 
 # Specific frequency to be set.
