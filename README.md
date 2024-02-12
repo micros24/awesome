@@ -211,6 +211,7 @@ Environment:
 `QT_STYLE_OVERRIDE=kvantum`
 
 `GTK_THEME=Layan-Dark`
+
 # Essential configurations
 
 ## Performance Optimizations
