@@ -101,7 +101,8 @@ yay -S xdg-user-dirs xdg-desktop-portal-gtk polkit-gnome pcmanfm-qt-git \
     vulkan-intel lib32-vulkan-intel ananicy-cpp-git irqbalance r8168-dkms \
     pipewire lib32-pipewire pipewire-alsa pipewire-pulse pipewire-jack \
     wireplumber fastfetch cachyos-ananicy-rules-git cachy-browser \
-    qt5-wayland libdbusmenu-qt5 gnome-keyring droidcam
+    qt5-wayland libdbusmenu-qt5 gnome-keyring droidcam bluez-obex \
+    gvfs-mtp
 ```
 
 # Installing my Hyprland configs

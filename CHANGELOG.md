@@ -1,3 +1,7 @@
+# March 3, 2024
+
+- Added `bluez-obex gvfs-mtp`.
+
 # February 15, 2024
 
 - Moved changelogs to its own folder by year.
