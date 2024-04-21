@@ -84,18 +84,18 @@ globalkeys = gears.table.join(
     awful.key({ "Mod1", }, "Tab", function ()
             awful.client.focus.byidx(1) end),
     awful.key({ modkey, }, "c", function () 
-            awful.spawn.with_shell("DRI_PRIME=1 LIBVA_DRIVER_NAME=i965 cachy-browser") end),
+            awful.spawn.with_shell("DRI_PRIME=1 cachy-browser") end),
     awful.key({ modkey, }, "f", function () 
-            awful.spawn.with_shell("DRI_PRIME=1 LIBVA_DRIVER_NAME=i965 firefox") end),
+            awful.spawn.with_shell("DRI_PRIME=1 firefox") end),
     awful.key({ modkey, }, "b", function () 
-            awful.spawn.with_shell("DRI_PRIME=1 LIBVA_DRIVER_NAME=i965 brave") end),
+            awful.spawn.with_shell("DRI_PRIME=1 brave") end),
     awful.key({ "Control", "Mod1"}, "s", function () 
             awful.spawn.with_shell("steam-native -silent") end),
     awful.key({ "Control", "Mod1"}, "a", function () 
-            awful.spawn("awakened-poe-trade") end,
+            awful.spawn.with_shell("OBS_VKCAPTURE=1 awakened-poe-trade") end,
         {description = "open a browser", group = "client"}),
     awful.key({ modkey, }, "s", function () 
-            awful.spawn("flatpak run com.spotify.Client") end),
+            awful.spawn.with_shell("DRI_PRIME=1 flatpak run com.spotify.Client") end),
     awful.key({ modkey, }, "e", function () 
             awful.spawn("pcmanfm-qt") end),
     awful.key({ modkey, }, "r", function () 
@@ -104,14 +104,26 @@ globalkeys = gears.table.join(
             awful.spawn("kate /home/micro/GW2") end),
     awful.key({ modkey, }, "Return", function () 
             awful.spawn(terminal) end),
+    awful.key({ modkey, }, "p", function () 
+            awful.spawn.with_shell("env LUTRIS_SKIP_INIT=1 lutris lutris:rungameid/3") end),        
+            
+            
 --    awful.key({ modkey, }, "a", function () 
 --            awful.spawn("input-remapper-gtk") end),
+    -- all minimized clients are restored 
+    awful.key({ modkey, "Control"   }, "n", 
+        function()
+            local tag = awful.tag.selected()
+                for i=1, #tag:clients() do
+                    tag:clients()[i].minimized=false
+            end
+        end),
     awful.key({ "Control", "Mod1" }, "Delete", function () 
             awful.spawn("wleave") end),
     awful.key({ modkey, }, "m", function () 
             awful.spawn("easyeffects") end),
     awful.key({ modkey, }, "l", function () 
-            awful.spawn("xlock -dpmsoff 60") end),
+            awful.spawn("sxlock") end),
     awful.key({ modkey, }, "j", function () 
             awful.screen.focus_relative(1) end),
     awful.key({ modkey, }, "q",   awful.tag.viewprev),
@@ -155,9 +167,9 @@ globalkeys = gears.table.join(
 
     -- Standard program
     awful.key({ modkey, "Control" }, "r", awesome.restart,
-              {description = "reload awesome", group = "awesome"})
-    -- awful.key({ modkey, "Shift"   }, "q", awesome.quit,
-    --          {description = "quit awesome", group = "awesome"})
+              {description = "reload awesome", group = "awesome"}),
+    awful.key({ modkey, "Control"   }, "q", awesome.quit,
+              {description = "quit awesome", group = "awesome"})
 )
 
 clientkeys = gears.table.join(
@@ -220,29 +232,32 @@ for i = 1, 9 do
                             awful.client.movetoscreen()
                         end
                 end end,
-            {description = "move screens of the focused client"..i, group = "tag"})
-        -- Toggle tag display.
-        -- awful.key({ modkey, "Control" }, "#" .. i + 9,
-        --           function ()
-        --               local screen = awful.screen.focused()
-        --               local tag = screen.tags[i]
-        --               if tag then
-        --                  awful.tag.viewtoggle(tag)
-        --               end
-        --           end,
-        --           {description = "toggle tag #" .. i, group = "tag"}),
-        
-        -- Toggle tag on focused client.
-        -- awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
-        --           function ()
-        --               if client.focus then
-        --                   local tag = client.focus.screen.tags[i]
-        --                   if tag then
-        --                       client.focus:toggle_tag(tag)
-        --                   end
-        --               end
-        --           end,
-        --           {description = "toggle focused client on tag #" .. i, group = "tag"})
+                    {description = "move screens of the focused client"..i, group = "tag"})
+--        -- Ctrl+Alt+Shift+Left/Right: move client to prev/next tag
+--        awful.key({ modkey, "Shift" }, "q",
+--            function ()
+--                -- get current tag
+--                local t = client.focus and client.focus.first_tag or nil
+--                if t == nil then
+--                    return
+--                end
+--                -- get previous tag (modulo 9 excluding 0 to wrap from 1 to 9)
+--                local tag = client.focus.screen.tags[(t.name - 2) % 9 + 1]
+--                awful.client.movetotag(tag)
+--            end,
+--                {description = "move client to previous tag", group = "layout"}),
+--        awful.key({ modkey, "Shift" }, "Tab",
+--            function ()
+--                -- get current tag
+--                local t = client.focus and client.focus.first_tag or nil
+--                if t == nil then
+--                    return
+--                end
+--                -- get next tag (modulo 9 excluding 0 to wrap from 9 to 1)
+--                local tag = client.focus.screen.tags[(t.name % 9) + 1]
+--                awful.client.movetotag(tag)
+--            end,
+--                {description = "move client to next tag", group = "layout"})
     )
 end
 
@@ -268,21 +283,19 @@ root.keys(globalkeys)
 -- Rules to apply to new clients (through the "manage" signal).
 awful.rules.rules = {
     -- Custom rules
-    { rule_any = { 
-    	class = { 
-    		"kate", 
-    		"File-roller",
-    		"Input-remapper-gtk"
-    	}},
-        properties = { opacity = 0.85 }},
-    { rule_any = { class = {"VSCodium"}},
+    { rule_any = { class = {
+                    "VSCodium",
+                    "kate", 
+                    "kwrite",
+                    "File-roller",
+                    "Input-remapper-gtk"
+                }},
         properties = { opacity = 0.9 }},
-    { rule = { name = "Spotify"},
-        properties = { tag = screen[2].tags[9], switch_to_tags = true }},
     { rule_any = 
         { class = {
             "brave-browser", 
-            "Brave-browser"
+            "Brave-browser",
+            "firefox"
         }},
         properties = { tag = screen[2].tags[1], switch_to_tags = true }},
     {rule = { class = "Psensor" },
@@ -450,7 +463,6 @@ screen.connect_signal("arrange", function (s)
         end
     end
 end)
-
-         -- local paddingValue = { bottom = 18 }
-	 -- awful.screen.focused().padding = paddingValue;
+    local paddingValue = { top = 6 }
+    awful.screen.focused().padding = paddingValue;
 -- }}}

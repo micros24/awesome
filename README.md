@@ -94,11 +94,11 @@ yay -S xdg-user-dirs xdg-desktop-portal-gtk polkit-gnome pcmanfm-qt-git \
 
 # Installing my AwesomeWM configs
 
-Picom is my compositor. Polybar is my status bar. Wleave is my logout screen. Rofi is my application runner. xfce4-clipman is my clipboard manager. Scrot is my screenshot tool. xlockmore is my lockscreen. Nitrogen is what I use to set my wallpaper.
+Picom is my compositor. Polybar is my status bar. Wleave is my logout screen. Rofi is my application runner. xfce4-clipman is my clipboard manager. Scrot is my screenshot tool. sxlock is my lockscreen. Nitrogen is what I use to set my wallpaper.
 
 ```
 yay -S awesome-git picom-git polybar-git wleave-git xfce4-clipman-plugin \
-    rofi-lbonn-wayland-git xlockmore-nomotif playerctl pamixer nitrogen \
+    rofi-lbonn-wayland-git playerctl pamixer nitrogen sxlock \
     xf86-video-amdgpu lxappearance-gtk3 scrot
 ```
 

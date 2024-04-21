@@ -1,3 +1,9 @@
+# April 21, 2024
+
+- Added `sxlock`.
+- Removed `xlockmore-nomotif`.
+- Updated dotFiles to latest.
+
 # February 10, 2024
 
 - Added nanorc.

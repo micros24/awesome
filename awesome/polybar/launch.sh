@@ -2,10 +2,11 @@
 
 # Terminate already running bar instances
 # If all your bars have ipc enabled, you can use 
-# polybar-msg cmd quit
+polybar-msg cmd quit
 # Otherwise you can use the nuclear option:
-killall -q polybar
+# killall -q polybar
 
-# sleep 2
-# echo "---" | tee -a /tmp/polybar1.log
-polybar myBar 2>&1 | tee -a /tmp/polybar1.log & disown 
+# Launch bar1 and bar2
+echo "---" | tee -a /tmp/polybar1.log /tmp/polybar2.log
+polybar myBar 2>&1 | tee -a /tmp/polybar1.log & disown
+#polybar myBar2 2>&1 | tee -a /tmp/polybar2.log & disown
