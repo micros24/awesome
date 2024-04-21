@@ -2,8 +2,8 @@
     border: none;
     border-radius: 0;
     font-family: Nerd Font Hack;
-    min-height: 24px;
-    font-size: 14px;
+    min-height: 20px;
+    font-size: 12px;
 }
 
 window#waybar {
@@ -18,7 +18,7 @@ window#waybar.hidden {
 #workspaces {
     padding-left: 4px;
     padding-right: 6px;
-    border-radius: 8px 8px 0px 0px;
+    border-radius: 0px 0px 0px 0px;
     transition: none;
     background: #383c4a;
 }
@@ -61,7 +61,7 @@ window#waybar.hidden {
 #clock {
     padding-left: 8px;
     padding-right: 8px;
-    border-radius: 8px 0px 0px 0px;
+    border-radius: 0px 0px 0px 0px;
     transition: none;
     color: #ffffff;
     background: #383c4a;
@@ -70,14 +70,14 @@ window#waybar.hidden {
 #clock.time {
     padding-left: 8px;
     padding-right: 8px;
-    border-radius: 0px 8px 0px 0px;
+    border-radius: 0px 0px 0px 0px;
 }
 
 #tray {
     padding-left: 8px;
     padding-right: 8px;
     margin-right: 8px;
-    border-radius: 0px 8px 0px 0px;
+    border-radius: 0px 0px 0px 0px;
     transition: none;
     color: #ffffff;
     background: #383c4a;
@@ -87,7 +87,7 @@ window#waybar.hidden {
     padding-left: 8px;
     padding-right: 8px;
     margin-right: 8px;
-    border-radius: 8px 8px 0px 0px;
+    border-radius: 0px 0px 0px 0px;
     transition: none;
     color: #ffffff;
     background: #383c4a;
@@ -97,7 +97,7 @@ window#waybar.hidden {
     padding-left: 8px;
     padding-right: 8px;
     margin-right: 8px;
-    border-radius: 8px 8px 0px 0px;
+    border-radius: 0px 0px 0px 0px;
     transition: none;
     color: #ffffff;
     background: #383c4a;
@@ -107,7 +107,7 @@ window#waybar.hidden {
     padding-left: 8px;
     padding-right: 12px;
     margin-right: 8px;
-    border-radius: 8px 8px 0px 0px;
+    border-radius: 0px 0px 0px 0px;
     transition: none;
     color: #ffffff;
     background: #383c4a;
@@ -122,7 +122,7 @@ window#waybar.hidden {
     padding-left: 8px;
     padding-right: 8px;
     margin-right: 0px;
-    border-radius: 8px 0px 0px 0px;
+    border-radius: 0px 0px 0px 0px;
     transition: none;
     color: #ffffff;
     background: #383c4a;
@@ -131,7 +131,7 @@ window#waybar.hidden {
 #temperature {
     padding-left: 8px;
     padding-right: 8px;
-    border-radius: 8px 0px 0px 0px;
+    border-radius: 0px 0px 0px 0px;
     transition: none;
     color: #ffffff;
     background: #383c4a;
@@ -141,7 +141,7 @@ window#waybar.hidden {
     padding-left: 8px;
     padding-right: 8px;
     margin-right: 8px;
-    border-radius: 8px 8px 0px 0px;
+    border-radius: 0px 0px 0px 0px;
     transition: none;
     color: #ffffff;
     background: #383c4a;
@@ -151,7 +151,7 @@ window#waybar.hidden {
     padding-left: 8px;
     padding-right: 8px;
     margin-right: 8px;
-    border-radius: 8px 8px 0px 0px;
+    border-radius: 0px 0px 0px 0px;
     transition: none;
     color: #ffffff;
     background: #383c4a;

@@ -112,8 +112,8 @@ Waybar is my status bar. Wleave is my logout screen. Wofi is my application runn
 ```
 yay -S xdg-desktop-portal-hyprland-git hyprland-git waybar-git mako \
     grim-git hyprpaper-git wl-clip-persist cliphist nwg-look-bin \
-    swaylock-effects-git wleave-git wofi swayidle-git swappy grimblast-git \
-    pamixer wlroots-git
+    hyprlock-git wleave-git wofi swayidle-git swappy grimblast-git \
+    pamixer wlroots-git hypridle-git
 ```
 
 ## Installing hyprload
@@ -147,7 +147,8 @@ Install [Mudfish VPN](https://mudfish.net/download) from their website.
 Install packages from [cachyos-gaming-meta](https://github.com/CachyOS/CachyOS-PKGBUILDS/blob/master/cachyos-gaming-meta/PKGBUILD).
 
 ```
-yay -S --needed vkbasalt lib32-vkbasalt wmctrl protonup-qt proton-cachyos
+yay -S --needed vkbasalt lib32-vkbasalt wmctrl protonup-qt proton-cachyos \
+    gamemode lib32-gamemode
 ```
 
 ## Open Broadcasting Software (OBS) Studio

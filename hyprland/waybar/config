@@ -1,6 +1,6 @@
 {
         "layer": "top",
-        "position": "bottom", // Waybar position (top|bottom|left|right)
+        "position": "top", // Waybar position (top|bottom|left|right)
         "height": 20, // Waybar height (to be removed for auto height)
         "spacing": 0, // Gaps between modules (4px)
         // "output": "HDMI-A-2",
@@ -10,18 +10,12 @@
         "modules-center": ["clock", "clock#time"],
         "modules-right": ["custom/kernel", "pulseaudio", "cpu", "memory"],
         "hyprland/workspaces": {
-            "active-only": false,
             "disable-scroll": true,
-            "all-outputs": false,
             "on-click": "activate",
             "sort-by": "number",
             "persistent-workspaces": {
-                "1": [
-                    "HDMI-A-2" // workspace 1 shown on HDMI-A-2
-                ],
-                "11": [
-                    "DP-1" // workspace 11 shown on DP-1
-                ]
+                "HDMI-A-2": [ 1 ],
+                "DP-1": [ 11 ]
             }
         },
         "tray": {

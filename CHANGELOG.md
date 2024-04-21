@@ -1,3 +1,10 @@
+# April 21, 2024
+
+- Added `gamemode lib32-gamemode` to "Setting Up Gaming" section.
+- Added `hyprlock-git hypridle-git` to the Hyprland section.
+- Removed `swaylock-effects-git'.
+- Updated dotFiles to latest.
+
 # March 3, 2024
 
 - Added `bluez-obex gvfs-mtp`.
