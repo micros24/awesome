@@ -113,7 +113,8 @@ Waybar is my status bar. Wleave is my logout screen. Wofi is my application runn
 yay -S xdg-desktop-portal-hyprland-git hyprland-git waybar-git mako \
     grim-git hyprpaper-git wl-clip-persist cliphist nwg-look-bin \
     hyprlock-git wleave-git wofi swayidle-git swappy grimblast-git \
-    pamixer wlroots-git hypridle-git
+    pamixer wlroots-git hypridle-git hyprcursor-git hyprlang-git \
+    hyprwayland-scanner-git
 ```
 
 ## Installing hyprload

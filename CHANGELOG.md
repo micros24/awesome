@@ -1,3 +1,7 @@
+# June 6, 2024
+
+- Added `hyprcursor-git hyprlang-git hyprwayland-scanner-git`
+
 # April 21, 2024
 
 - Added `gamemode lib32-gamemode` to "Setting Up Gaming" section.
