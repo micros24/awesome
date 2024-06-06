@@ -1,8 +1,13 @@
 #!/bin/sh
 
-# input-remapper-control --command stop-all && input-remapper-control --command autoload
+#xrandr --output HDMI-A-1 --mode 1920x1080 --rate 75 --pos 0x0 --primary
+#xrandr --output HDMI-A-0 --mode 1920x1080 --rate 75 --pos 0x0 --primary
+#xrandr --output DP-1-1 --mode 1440x900 --rate 60 --pos 1920x50
+#xrandr --output DP-1-4 --mode 1440x900 --rate 60 --pos 1920x50
+xset r rate 300 35
+
 export XCURSOR_SIZE=24
-export XCURSOR_THEME=breeze_cursors
+export XCURSOR_THEME=Breeze_Snow
 export QT_STYLE_OVERRIDE=kvantum
 export XDG_CURRENT_DESKTOP=awesome
-export QT_QPA_PLATFORMTHEME=qt5ct
+export QT_QPA_PLATFORMTHEME=qt6ct
