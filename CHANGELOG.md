@@ -1,6 +1,13 @@
 # June 6, 2024
 
 - Added `hyprcursor-git hyprlang-git hyprwayland-scanner-git`
+- Updated grub config. Disabled ipv6 in grub.
+- Updated gamemode.ini
+- Updated makepkg.conf
+- Updated reflector.conf
+- Updated easyeffects profiles
+- Updated mangohud.conf
+- Updated hyprland.conf
 
 # April 21, 2024
 
