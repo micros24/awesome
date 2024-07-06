@@ -3,14 +3,18 @@
 - Removed all reference to "Hyprland".
 - Removed all referense to "KDE Plasma".
 - Removed ALHP from "x86_64_v3" section.
+- Removed `org.kde.kwrite` from "Setup preload" section.
 - Removed `brave-bin sxlock weston-git` and flatpak `org.kde.kwrite`.
 - Removed zram-generator from 'Performance Optimizations' section. It's already included in `cachyos-settings`.
-- Updated links in 'Performance Optimizations' section.
 - Added `xautolock xlockmore-blank steam-screensaver-fix kwrite xf86-input-evdev`.
 - Added Rokin05 to CREDITS.md.
 - Added a new section "Flatpaks" under "My personal installs".
+- Added `kate` into "Setup preload" section.
 - Changed shell back from `fish` to `zsh`.
 - Changed `qt5ct` to `qt6ct`.
+- Changed `lxappearance-gtk3` to `nwg-look-bin`.
+- Changed ".xprofile" to "xprofile".
+- Updated links in 'Performance Optimizations' section.
 - Updated dotFiles to latest.
 - Updated streamlined the folder structure.
 

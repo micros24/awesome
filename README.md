@@ -66,7 +66,7 @@ Picom is my compositor. Polybar is my status bar. Wleave is my logout screen. Ro
 ```
 yay -S awesome-git picom-git polybar-git wleave-git xfce4-clipman-plugin \
     rofi-lbonn-wayland-git playerctl pamixer nitrogen xlockmore-blank \
-    xf86-video-amdgpu lxappearance-gtk3 scrot
+    xf86-video-amdgpu nwg-look-bin scrot
 ```
 
 # My personal installs
@@ -134,7 +134,7 @@ Set the font of your terminal of choice to MesloLGS NF
 - [Reversal icon theme](https://github.com/yeyushengfan258/Reversal-icon-theme)
 - [Layan-GTK-theme](https://github.com/vinceliuice/Layan-gtk-theme)
 - [Layan-KDE](https://github.com/vinceliuice/Layan-kde) for Kvantum.
-- Setup your themes and icons using qt5ct, kvantum, and nwg-look.
+- Setup your themes and icons using qt6ct, kvantum, and nwg-look.
 - Setup your [SDDM theme](https://github.com/Rokin05/sddm-themes/tree/master/src/sober).
 - Setup your wallpaper using nitrogen.
 - Setup global font to EB Garamond:size:14.
@@ -245,4 +245,8 @@ gopreload-prepare pcmanfm-qt
 
 ```
 gopreload-prepare lximage-qt
+```
+
+```
+gopreload-prepare kate
 ```
