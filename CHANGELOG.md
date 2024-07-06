@@ -12,6 +12,7 @@
 - Changed shell back from `fish` to `zsh`.
 - Changed `qt5ct` to `qt6ct`.
 - Updated dotFiles to latest.
+- Updated streamlined the folder structure.
 
 # April 21, 2024
 
