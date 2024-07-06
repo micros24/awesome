@@ -6,3 +6,4 @@
 - [Arch Linux Optimization Guide](https://ventureo.codeberg.page/) for subjective additional performance optimizations.
 - [Reversal icon theme](https://github.com/yeyushengfan258/Reversal-icon-theme) for the wonderful icon theme.
 - [vinceliuice](https://github.com/vinceliuice) for their amazing Layan theme.
+- [Rokin05](https://github.com/Rokin05) for their SDDM theme.

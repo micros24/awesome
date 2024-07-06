@@ -1,3 +1,18 @@
+# July 7, 2024
+
+- Removed all reference to "Hyprland".
+- Removed all referense to "KDE Plasma".
+- Removed ALHP from "x86_64_v3" section.
+- Removed `brave-bin sxlock weston-git` and flatpak `org.kde.kwrite`.
+- Removed zram-generator from 'Performance Optimizations' section. It's already included in `cachyos-settings`.
+- Updated links in 'Performance Optimizations' section.
+- Added `xautolock xlockmore-blank steam-screensaver-fix kwrite xf86-input-evdev`.
+- Added Rokin05 to CREDITS.md.
+- Added a new section "Flatpaks" under "My personal installs".
+- Changed shell back from `fish` to `zsh`.
+- Changed `qt5ct` to `qt6ct`.
+- Updated dotFiles to latest.
+
 # April 21, 2024
 
 - Added `sxlock`.

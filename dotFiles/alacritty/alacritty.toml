@@ -5,10 +5,11 @@ TERM = "xterm-256color"
 WINIT_X11_SCALE_FACTOR = "1"
 
 [window]
-opacity = 0.5
+opacity = 0.8
+dimensions = { columns = 140, lines = 35 }
 decorations = "None"
-blur = false
-# decorations_theme_variant = "Dark"
+blur = true
+decorations_theme_variant = "Dark"
 
 [window.class]
 instance = "Alacritty"

@@ -1,7 +1,7 @@
 export EDITOR=nano
 export VISUAL=nano
 
-alias showGpu='cat /sys/class/drm/card1/device/pp_od_clk_voltage'
+alias showGpu='cat /sys/class/drm/card0/device/pp_od_clk_voltage'
 alias makesrcinfo='makepkg --printsrcinfo > .SRCINFO'
 alias editPacman='sudo nano /etc/pacman.conf'
 alias editMakepkg='sudo nano /etc/makepkg.conf'
@@ -9,3 +9,10 @@ alias pmIsInst='pacman -Qs'
 alias pmUninst='sudo pacman -Rsn'
 alias pmInst='sudo pacman -S'
 alias removeExif='exiftool -overwrite_original -all='
+alias grubup="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias ls='ls -lah --color'
+alias removeOrphans='sudo pacman -Qdtq | sudo pacman -Rns -'
+alias runMudfishVPN='sudo /opt/mudfish/5.11.1/bin/mudrun-headless'
+alias runOpenMWWithMangohud='MANGOHUD_DLSYM=1 LD_BIND_NOW=1 OSG_VERTEX_BUFFER_HINT=VERTEX_BUFFER_OBJECT mangohud openmw'
+# alias runOpenMWWithMangohud='DRI_PRIME=1 MANGOHUD_DLSYM=1 LD_BIND_NOW=1 OSG_VERTEX_BUFFER_HINT=VERTEX_BUFFER_OBJECT mangohud openmw'
+# alias runOpenMWWithMangohud='MANGOHUD_DLSYM=1 LD_BIND_NOW=1 OSG_VERTEX_BUFFER_HINT=VERTEX_BUFFER_OBJECT mangohud gamescope -W 1920 -H 1080 -r 75 -f -- openmw'
