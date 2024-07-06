@@ -17,11 +17,7 @@ yay -Y --devel --save
 yay --editmenu --nodiffmenu --save
 ```
 
-# Installing x86_64_v3 repositories
-
-You have two repository choices: CachyOS or ALHP.
-
-## CachyOS
+# Installing CachyOS' x86_64_v3 repositories
 
 ```
 sudo pacman-key --recv-keys F3B607488DB35A47 --keyserver keyserver.ubuntu.com
